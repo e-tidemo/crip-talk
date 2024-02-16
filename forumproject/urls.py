@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from forumapp.views import crip_talk
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('forum/', crip_talk, name='forum')
 ]
