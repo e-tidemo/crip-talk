@@ -19,3 +19,10 @@ Crip Talk is a forum website created by and for people with disabilities where w
 # User Experience (UX)
 An overall goal of this website is to make sure it is as accessible as possible as it is made for people with disabilities.
 
+# Design
+
+## Wireframes
+![Wireframe home page](documentation/home-page-browser.png)
+![Wireframe home page smartphone](documentation/home-page-smartphone.png)
+![Wireframe forum page](documentation/sign-up-page-browser.png)
+![Wireframe forum page](documentation/family-forum-page.png)
