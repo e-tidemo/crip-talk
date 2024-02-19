@@ -31,4 +31,31 @@
     </div>
 </div>
 
+<!-- Display existing comments -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Comments</h2>
+            {% for comment in post.comments.all %}
+                <p>{{ comment.body }} - {{ comment.author.username }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Comment form -->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Add Comment</h2>
+            <form method="post" action="{% url 'add_comment' slug=post.slug %}">
+                {% csrf_token %}
+                {{ comment_form.as_p }}
+                <button type="submit">Add Comment</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 {% endblock content %}
