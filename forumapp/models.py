@@ -26,7 +26,7 @@ class Post(models.Model):
     
     def save(self, *args, **kwargs):
         # Calculate excerpt from the first 300 characters of the content
-        self.excerpt = strip_tags(self.content[:200])
+        self.excerpt = strip_tags(self.content[:150])
         
         super().save(*args, **kwargs)
 
