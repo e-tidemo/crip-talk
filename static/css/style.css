@@ -20,7 +20,7 @@ body {
     padding-top: 20px; 
 }
 
-.main-title {
+.mainTitle {
     font-family: "Bebas Neue", sans-serif;
     color: #f8f8f8;
 }
@@ -28,10 +28,31 @@ body {
 h1{
     font-size: 200px;
 }
-.forum-intro {
+
+.forumIntro {
     font-family: "Bebas Neue", sans-serif;
     color: #272d2d;
     font-size: 30px;
+}
+
+.btn-primary {
+    align-items: center;
+    background-color: #ff4d29;
+    color: #f8f8f8;
+    border-color: #ff4d29;
+    border-radius: 15px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 30px;
+    padding: 10px 20px;
+} 
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #f8f8f8;
+    border-color: #f8f8f8;
+    color: #272d2d;
+    outline: none;
 }
 
 .brand {
@@ -176,7 +197,7 @@ h1{
 
 .link:hover,
 .link:active {
-    color: #445261;
+    color: #9ec5ff;
     text-decoration: underline;
 }
 
