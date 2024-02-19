@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
 from django.utils.html import strip_tags
+import random
 
 # Create your models here.
 
@@ -42,3 +43,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.body} | by {self.author}"
+    

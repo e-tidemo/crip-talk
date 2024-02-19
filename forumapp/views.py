@@ -11,6 +11,12 @@ class PostList(generic.ListView):
     template_name = "forumapp/index.html"
     paginate_by = 6
 
+    def get_queryset(self):
+        # Fetch three random posts for each slide
+        posts = Post.objects.filter(status=1).order_by('?')[:3]
+        return posts
+
+
 @login_required
 def post_detail(request, slug):
     """
