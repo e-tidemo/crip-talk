@@ -53,18 +53,18 @@
                     </li>
     
                     <!-- Topics (Dropdown) -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="topicsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item dropdown" id="topicsDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                             Topics
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="topicsDropdown">
+                        <div class="dropdown-menu dropdown-menu-hover" aria-labelledby="topicsDropdown">
                             <a class="dropdown-item" href="#">Family</a>
-                            <a class="dropdown-item" href="#">Art</a>
+                            <a class="dropdown-item" href="#">Pastimes</a>
                             <a class="dropdown-item" href="#">Career</a>
                             <a class="dropdown-item" href="#">Wall of Complaints</a>
-                            <a class="dropdown-item" href="#">Sports</a>
                         </div>
                     </li>
+                    
     
                     <!-- Post (Conditionally displayed based on user authentication) -->
                     <!-- You can add the logic in your Django templates to show/hide this based on user authentication -->
