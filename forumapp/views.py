@@ -13,7 +13,16 @@ class PostList(generic.ListView):
 
     def get_queryset(self):
         # Fetch three random posts for each slide
-        posts = Post.objects.filter(status=1).order_by('?')[:3]
+        # posts = Post.objects.filter(status=1).order_by('?')[:3]
+        posts = Post.objects.filter(status=1)
+        total_posts = posts.count()
+        
+        if total_posts < 3:
+            # Duplicate the posts to fill the carousel
+            posts = Post.objects.filter(status=1).order_by('?')[:3] * (3 // total_posts + 1)
+        else:
+            posts = Post.objects.filter(status=1).order_by('?')[:3]
+
         return posts
 
 
