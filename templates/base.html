@@ -44,7 +44,7 @@
                 <ul class="navbar-nav">
                     <!-- Home -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
                     </li>
     
                     <!-- Sign Up -->
@@ -59,24 +59,21 @@
     
                     <!-- Topics (Dropdown) -->
                     <li class="nav-item dropdown" id="topicsDropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="return false;">
                             Topics
                         </a>
                         <div class="dropdown-menu dropdown-menu-hover" aria-labelledby="topicsDropdown">
-                            <a class="dropdown-item" href="#">Family</a>
-                            <a class="dropdown-item" href="#">Pastimes</a>
-                            <a class="dropdown-item" href="#">Career</a>
-                            <a class="dropdown-item" href="#">Wall of Complaints</a>
+                            <a class="dropdown-item" href="{% url 'family' %}">Family</a>
+                            <a class="dropdown-item" href="{% url 'pastimes' %}">Pastimes</a>
+                            <a class="dropdown-item" href="{% url 'career' %}">Career</a>
+                            <a class="dropdown-item" href="{% url 'wall_of_complaints' %}">Wall of Complaints</a>
                         </div>
                     </li>
-                    <!-- Create posts (only displayed if user is logged in) -->
+                    <!-- Create posts -->
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'create_post' %}">Create Post</a>
                     </li>
 
-                    <!-- You can add the logic in your Django templates to show/hide this based on user authentication -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Post</a>
                     </li>
                 </ul>
             </div>
@@ -104,6 +101,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
         </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-6s8o0sI0iR5TQpZZKD+PYQe2IMIBo4CIqVNizE3+AENeHoFLA/KJFuUs/2b+I1iI" crossorigin="anonymous"></script>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
