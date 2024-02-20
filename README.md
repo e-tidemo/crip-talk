@@ -26,3 +26,15 @@ An overall goal of this website is to make sure it is as accessible as possible 
 ![Wireframe home page smartphone](documentation/home-page-smartphone.png)
 ![Wireframe forum page](documentation/sign-up-page-browser.png)
 ![Wireframe forum page](documentation/family-forum-page.png)
+
+
+
+
+
+
+## Credits
+
+### Code Used
+I have followed some tutorials, both written and on Youtube, to find guidance in how to build this forum app. These are listed below:
+
+- I found instructions on how to add a signup form in this article by Arthur C. Codex: [Code for signup form](https://reintech.io/blog/writing-a-custom-signup-form-in-django)
