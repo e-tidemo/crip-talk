@@ -18,7 +18,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     excerpt = models.TextField(blank=True)
     tags = TaggableManager()
-    category = models.CharField(max_length=100, choices=[('family', 'Family'), ('pastimes', 'Pastimes'), ('career', 'Career'), ('wall_of_complaints', 'Wall of Complaints')])
+    category = models.CharField(max_length=100, choices=[('family', 'Family'), ('pastimes', 'Pastimes'), ('career', 'Career'), ('wall_of_complaints', 'Wall of Complaints')], default='pastimes')
 
     class Meta:
         ordering = ["-created_on"]
