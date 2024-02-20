@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, SignupForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login
 
 # Create your views here.
 
@@ -69,3 +70,14 @@ def post_detail(request, slug):
         "blog/post_detail.html",
         {"post": post, "comments": comments, "comment_form": comment_form},
     )
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = SignupForm()
+    return render(request, 'signup.html', {'form':form})
