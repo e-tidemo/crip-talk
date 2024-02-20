@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from .models import Post
-from .forms import CommentForm, SignupForm
+from .forms import CommentForm, SignupForm, PostForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 
@@ -81,3 +81,45 @@ def signup(request):
     else:
         form = SignupForm()
     return render(request, 'forumapp/signup.html', {'form':form})
+
+@login_required
+def create_post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
+            return redirect('post_detail', slug=post.slug)
+    else:
+        form = PostForm()
+
+    return render(request, 'forumapp/create_post.html', {'form': form})
+
+class FamilyView(generic.ListView):
+    template_name = 'forumapp/family.html'
+    context_object_name = 'post_list'
+
+    def get_queryset(self):
+        return Post.objects.filter(category='family', status=1).order_by('-created_on')
+
+class PastimesView(generic.ListView):
+    template_name = 'forumapp/pastimes.html'
+    context_object_name = 'post_list'
+
+    def get_queryset(self):
+        return Post.objects.filter(category='pastimes', status=1).order_by('-created_on')
+    
+class CareerView(generic.ListView):
+    template_name = 'forumapp/career.html'
+    context_object_name = 'post_list'
+
+    def get_queryset(self):
+        return Post.objects.filter(category='career', status=1).order_by('-created_on')
+    
+class WallOfComplaintsView(generic.ListView):
+    template_name = 'forumapp/wall_of_complaints.html'
+    context_object_name = 'post_list'
+
+    def get_queryset(self):
+        return Post.objects.filter(category='wall_of_complaints', status=1).order_by('-created_on')

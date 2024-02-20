@@ -6,7 +6,6 @@ from django.contrib.auth.forms import UserCreationForm
 class PostForm(forms.ModelForm):
     """Form for adding posts"""
 
-    category = forms.ChoiceField(choices=[('category1', 'Category 1'), ('category2', 'Category 2'), ('category3', 'Category 3')])  # Add more choices as needed
     tags = TagField()
 
     class Meta:
