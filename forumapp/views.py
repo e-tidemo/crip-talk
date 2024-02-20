@@ -80,4 +80,4 @@ def signup(request):
             return redirect('home')
     else:
         form = SignupForm()
-    return render(request, 'signup.html', {'form':form})
+    return render(request, 'forumapp/signup.html', {'form':form})
