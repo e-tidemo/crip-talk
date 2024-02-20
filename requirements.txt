@@ -7,6 +7,7 @@ django-hitcount==1.3.5
 django-resized==1.0.2
 django-summernote==0.8.20.0
 django-taggit==5.0.1
+django-taggit-labels==0.7.0
 django-tinymce==3.7.1
 gunicorn==20.1.0
 pillow==10.2.0
