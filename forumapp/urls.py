@@ -10,4 +10,5 @@ urlpatterns = [
     path('post/new/', views.create_post, name='create_post'),
     path('signup/', views.signup, name='signup'),
     path('<slug:slug>/', views.post_detail, name='post_detail'),
+    path('<slug:slug>/add_comment/', views.add_comment, name='add_comment'),
 ]

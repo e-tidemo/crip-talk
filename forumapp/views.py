@@ -29,47 +29,37 @@ class PostList(generic.ListView):
 
 @login_required
 def post_detail(request, slug):
-    """
-    Display an individual :model:`blog.Post`.
-
-    **Context**
-
-    ``post``
-        An instance of :model:`blog.Post`.
-    ``comments``
-        A list of :model:`blog.Comment` objects for the post.
-    ``comment_form``
-        An instance of :form:`blog.CommentForm` for adding new comments.
-
-    **Template:**
-
-    :template:`blog/post_detail.html`
-    """
-
     post = get_object_or_404(Post, slug=slug, status=1)
     comments = post.comments.all()
+    comment_form = CommentForm()
+
+    return render(
+        request,
+        "forumapp/post_detail.html",
+        {"post": post, "comments": comments, "comment_form": comment_form},
+    )
+
+@login_required
+def add_comment(request, slug):
+    post = get_object_or_404(Post, slug=slug, status=1)
 
     if request.method == 'POST':
-        if request.user.is_authenticated:  # Check if the user is logged in
-            comment_form = CommentForm(request.POST)
+        comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
             new_comment.post = post
             new_comment.author = request.user
             new_comment.save()
+            # Optionally, you can redirect to the post detail page or any other page
             return redirect('post_detail', slug=post.slug)
-        else:
-            # Handle the case where the user is not logged in (maybe redirect to login page)
-            # You can customize this part based on your requirements
-            pass
+        # Handle the case where the form is not valid
+        # You might want to add some error handling or messages for the user
     else:
-        comment_form = CommentForm()
+        # Handle the case where the request method is not POST
+        pass
 
-    return render(
-        request,
-        "blog/post_detail.html",
-        {"post": post, "comments": comments, "comment_form": comment_form},
-    )
+    # You can customize this part based on your requirements
+    return redirect('post_detail', slug=post.slug)
 
 def signup(request):
     if request.method == 'POST':

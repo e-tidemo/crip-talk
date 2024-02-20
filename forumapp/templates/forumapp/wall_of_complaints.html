@@ -1,12 +1,12 @@
 <!-- family.html (example) -->
-{% extends "base.html" %}
+{% extends 'base_topic.html' %}
 
-{% block content %}
+{% block topic_content %}
     <!-- Your family-specific content goes here -->
     {% for post in post_list %}
         <!-- Display post details as needed -->
         <h2>{{ post.title }}</h2>
         <p>{{ post.content }}</p>
         <!-- ... (other details) -->
-    {% endfor %}
+    {% include 'forumapp/post_detail.html' %}
 {% endblock %}
