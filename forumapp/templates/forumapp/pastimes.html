@@ -1,12 +1,21 @@
-<!-- family.html (example) -->
 {% extends 'base_topic.html' %}
 
 {% block topic_content %}
-    <!-- Your family-specific content goes here -->
+
+<div class="container-fluid">
+    <div class="row">
+        <header>
+            <div class="banner">
+            <h1 class="topic-title">Pastimes</h1>
+            <p class="topic-intro">This topic refers to any activities one does in one's sparetime, dating, hobbies, travels, etc.</p>
+            </div>
+        </header>
     {% for post in post_list %}
-        <!-- Display post details as needed -->
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.content }}</p>
+        <span>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.excerpt }}</p>
+        </span>
         <!-- ... (other details) -->
     {% include 'forumapp/post_detail.html' %}
+    {% endfor %}
 {% endblock %}

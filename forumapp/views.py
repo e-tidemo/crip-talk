@@ -9,7 +9,7 @@ from django.contrib.auth import login
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
-    template_name = "forumapp/index.html"
+    template_name = "forumapp/post_detail"
     paginate_by = 6
 
     def get_queryset(self):
@@ -50,8 +50,6 @@ def add_comment(request, slug):
             new_comment.post = post
             new_comment.author = request.user
             new_comment.save()
-            # Optionally, you can redirect to the post detail page or any other page
-            return redirect('post_detail', slug=post.slug)
         # Handle the case where the form is not valid
         # You might want to add some error handling or messages for the user
     else:
