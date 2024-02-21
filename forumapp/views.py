@@ -9,7 +9,7 @@ from django.contrib.auth import login
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
-    template_name = "forumapp/post_detail"
+    template_name = "forumapp/post_list"
     paginate_by = 6
 
     def get_queryset(self):

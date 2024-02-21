@@ -1,13 +1,16 @@
-<!-- family.html (example) -->
 {% extends 'base_topic.html' %}
 
 {% block topic_content %}
-    <!-- Your family-specific content goes here -->
-    {% for post in post_list %}
-        <!-- Display post details as needed -->
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.content }}</p>
-        <!-- ... (other details) -->
-    {% include 'forumapp/post_detail.html' %}
-    {% endfor %}
+
+<div class="container-fluid">
+    <div class="row">
+        <header>
+            <div class="banner">
+                <h1 class="topic-title">Wall of Complaints</h1>
+                <p class="topic-intro">This page is made for getting our frustrations out, complaining away about whatever is bothering us at the moment.</p>
+            </div>
+        </header>
+    </div>
+    {% include 'forumapp/post_list.html' %}
+</div>
 {% endblock %}

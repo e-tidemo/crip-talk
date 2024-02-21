@@ -6,16 +6,11 @@
     <div class="row">
         <header>
             <div class="banner">
-            <h1 class="topic-title">Pastimes</h1>
-            <p class="topic-intro">This topic refers to any activities one does in one's sparetime, dating, hobbies, travels, etc.</p>
+                <h1 class="topic-title">Pastimes</h1>
+                <p class="topic-intro">This topic refers to any activities one does in one's sparetime, dating, hobbies, travels, etc.</p>
             </div>
         </header>
-    {% for post in post_list %}
-        <span>
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.excerpt }}</p>
-        </span>
-        <!-- ... (other details) -->
-    {% include 'forumapp/post_detail.html' %}
-    {% endfor %}
+    </div>
+    {% include 'forumapp/post_list.html' %}
+</div>
 {% endblock %}
