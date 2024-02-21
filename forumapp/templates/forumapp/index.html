@@ -9,18 +9,22 @@
             <div class="intro">
             <h1 class="mainTitle">Crip Talk</h1>
             <p class="forumIntro">A separatist forum for those of us who have disabilities of different kinds to connect with, relate to and learn from each other</p>
-            <a class="btn btn-primary" href="#" role="button">Sign Up</a>
+            <a class="btn btn-primary" href="{% url 'signup' %}" role="button">Sign Up</a>
             </div>
         </header>
         <!-- Example thread posts column in carousel -->
-        <div class="col-12 mt-3 left">
-            <div id="postCarousel" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    {% for post in random_posts %}
-                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                        <div class="row">
+        <div id="postCarousel" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#postCarousel" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#postCarousel" data-bs-slide-to="1"></li>
+                <li data-bs-target="#postCarousel" data-bs-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner d-flex flex-row">
+                {% for post in random_posts %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}" id="post{{ post.id }}">
+                        <div class="row justify-content-center align-items-center">
                             <div class="col-md-4">
-                                <div class="card mb-4">
+                                <div class="card mb-4 mx-auto">
                                     <div class="card-body">
                                         <div class="image-container">
                                             <div class="image-flash">
@@ -28,25 +32,15 @@
                                             </div>
                                         </div>
                                         <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                            <h2 class="card-title">{{ post.title }}</h2>
-                                            <p class="card-text">{{ post.excerpt }}</p>
+                                            <h2 class="card-title">{{ post.title }}</h2>                                                    <p class="card-text">{{ post.excerpt }}</p>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
-                </div>
-                <a class="carousel-control-prev" href="#postCarousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#postCarousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
+                {% endfor %}
+            </div>            
         </div>
     </div>
 </div>

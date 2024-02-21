@@ -85,8 +85,45 @@ h1{
     border-radius: 20px;
 }
 
+#postCarousel .carousel-inner {
+    display: flex;
+    justify-content: space-around;
+}
+
+#postCarousel .carousel-item {
+    text-align: center;
+}
+
 .card-body {
     background-color: #f8f8f8;
+}
+
+.card {
+    border: none;
+    color: #272d2d;
+    width: 100%; /* Add this line to ensure full width */
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-flash {
+    position: relative;
+    bottom: 5%;
+    min-width: 30%;
+    left: -2px; 
+}
+
+.scale {
+    width: 100%;
+    height: auto;
+}
+
+.author {
+    color: #272d2d;
+    margin: 4px;
+    text-transform: uppercase;
 }
 
 .red-o {

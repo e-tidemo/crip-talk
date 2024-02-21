@@ -27,7 +27,7 @@ class PostList(ListView):
     model = Post
     template_name = 'forumapp/post_list.html'
     context_object_name = "post_list"
-    paginate_by = 3
+    paginate_by = 6
     queryset = Post.objects.filter(status=1).order_by('?')[:3]
     
     def get_context_data(self, **kwargs):
