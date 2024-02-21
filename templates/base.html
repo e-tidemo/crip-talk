@@ -1,4 +1,5 @@
 {% load static %}
+{% load humanize %}
 
 {% url 'home' as home_url %}
 
@@ -35,7 +36,7 @@
             <a class="navbar-brand" href="{% url 'home' %}">Crip Talk Forum</a>
     
             <!-- Navbar Toggle Button (for mobile) -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
     
@@ -46,17 +47,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'home' %}">Home</a>
                     </li>
-    
-                    <!-- Sign Up -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
-                    </li>
 
-                    <!-- Login -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Login</a>
-                    </li>
-    
                     <!-- Topics (Dropdown) -->
                     <li class="nav-item dropdown" id="topicsDropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="return false;">
@@ -69,12 +60,27 @@
                             <a class="dropdown-item" href="{% url 'wall_of_complaints' %}">Wall of Complaints</a>
                         </div>
                     </li>
+                    {% if user.is_authenticated %}
                     <!-- Create posts -->
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'create_post' %}">Create Post</a>
                     </li>
-
+                    <!-- Logout -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                     </li>
+
+                    {% else %}
+                    <!-- Sign Up -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                    </li>
+
+                    <!-- Login -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

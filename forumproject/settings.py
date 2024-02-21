@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'forumapp',
     'taggit',
     'django_summernote',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [

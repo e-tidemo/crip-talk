@@ -1,13 +1,7 @@
 <!-- post_list.html -->
-
+{% load humanize %}
   <div class="container-fluid">
     <div class="row">
-      <header>
-        <div class="banner">
-          <h1 class="topic-title">Latest Posts</h1>
-          <!-- Add any specific topic introduction here if needed -->
-        </div>
-      </header>
     </div>
 
     <div class="row">
@@ -17,7 +11,7 @@
             <div class="card-body">
               <h5 class="card-title">{{ post.title }}</h5>
               <p class="card-text">{{ post.excerpt }}</p>
-              <p class="card-text"><small class="text-muted">{{ post.created_on }}</small></p>
+              <p class="card-text"><small class="text-muted">Posted {{ post.created_on|naturaltime }} by {{ post.author.username }}</small></p>
               <a href="{% url 'post_detail' slug=post.slug %}" class="btn btn-primary">Read more</a>
             </div>
           </div>
