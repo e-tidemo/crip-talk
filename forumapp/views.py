@@ -1,30 +1,38 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
+from django.views.generic import ListView, TemplateView
 from .models import Post
 from .forms import CommentForm, SignupForm, PostForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
+from random import sample
 
 # Create your views here.
+class IndexView(TemplateView):
+    template_name='forumapp/index.html'
 
-class PostList(generic.ListView):
-    queryset = Post.objects.filter(status=1)
-    template_name = "forumapp/post_list"
-    paginate_by = 6
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
 
-    def get_queryset(self):
-        # Fetch three random posts for each slide
-        # posts = Post.objects.filter(status=1).order_by('?')[:3]
-        posts = Post.objects.filter(status=1)
-        total_posts = posts.count()
-        
-        if total_posts < 3:
-            # Duplicate the posts to fill the carousel
-            posts = Post.objects.filter(status=1).order_by('?')[:3] * (3 // total_posts + 1)
-        else:
-            posts = Post.objects.filter(status=1).order_by('?')[:3]
+        all_posts = Post.objects.all()
+        random_posts = sample(list(all_posts), 3)
+        context['random_posts'] = random_posts
+        return context
+    
+    def get(self, request, *args, **kwargs):
+        context = self.get_context_data()
+        return render(request, self.template_name, context)
 
-        return posts
+class PostList(ListView):
+    model = Post
+    template_name = 'forumapp/post_list.html'
+    context_object_name = "post_list"
+    paginate_by = 3
+    queryset = Post.objects.filter(status=1).order_by('?')[:3]
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
 
 
 @login_required

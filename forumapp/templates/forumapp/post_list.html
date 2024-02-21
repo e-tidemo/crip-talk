@@ -1,22 +1,48 @@
 <!-- post_list.html -->
 {% load humanize %}
-  <div class="container-fluid">
+<div class="container-fluid">
     <div class="row">
     </div>
 
     <div class="row">
-      {% for post in post_list %}
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">{{ post.title }}</h5>
-              <p class="card-text">{{ post.excerpt }}</p>
-              <p class="card-text"><small class="text-muted">Posted {{ post.created_on|naturaltime }} by {{ post.author.username }}</small></p>
-              <a href="{% url 'post_detail' slug=post.slug %}" class="btn btn-primary">Read more</a>
+        {% for post in post_list %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.excerpt }}</p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                Posted {{ post.created_on|naturaltime }} by {{ post.author.username }}
+                            </small>
+                        </p>
+                        <a href="{% url 'post_detail' slug=post.slug %}" class="btn btn-primary">Read more</a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      {% endfor %}
+        {% endfor %}
     </div>
-  </div>
 
+    <!-- Pagination -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pagination justify-content-center mt-3">
+                <span class="step-links">
+                    {% if post_list.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ post_list.previous_page_number }}">previous</a>
+                    {% endif %}
+
+                    <span class="current">
+                        Page {{ post_list.number }} of {{ post_list.paginator.num_pages }}.
+                    </span>
+
+                    {% if post_list.has_next %}
+                        <a href="?page={{ post_list.next_page_number }}">next</a>
+                        <a href="?page={{ post_list.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
