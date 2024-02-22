@@ -63,19 +63,13 @@ h1{
 
 .navbar {
     background-color: #ff8800;
+    min-height: 60px;
+    position: relative;
 }
 
 .navbar-brand {
     font-family: "Bebas Neue", sans-serif;
     font-size: xx-large;
-}
-
-.dropdown-menu.dropdown-menu-hover {
-    transition: none;
-}
-
-.dropdown-menu.dropdown-menu-hover:hover {
-    display: block;
 }
 
 .navbar-toggler {

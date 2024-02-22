@@ -63,11 +63,18 @@ h1{
 
 .navbar {
     background-color: #ff8800;
+    min-height: 60px;
+    position: relative;
 }
 
 .navbar-brand {
     font-family: "Bebas Neue", sans-serif;
     font-size: xx-large;
+}
+
+.navbar-toggler {
+    z-index: 1000;
+    position: relative;
 }
 
 .example-posts {
