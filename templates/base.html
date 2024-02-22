@@ -36,12 +36,12 @@
             <a class="navbar-brand" href="{% url 'home' %}">Crip Talk Forum</a>
     
             <!-- Navbar Toggle Button (for mobile) -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
     
             <!-- Navbar Links -->
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <!-- Home -->
                     <li class="nav-item">
@@ -60,6 +60,8 @@
                             <a class="dropdown-item" href="{% url 'wall_of_complaints' %}">Wall of Complaints</a>
                         </div>
                     </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
                     {% if user.is_authenticated %}
                     <!-- Create posts -->
                     <li class="nav-item">
@@ -82,6 +84,10 @@
                     </li>
                     {% endif %}
                 </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
             </div>
         </div>
     </nav>

@@ -14,31 +14,25 @@
         </header>
         <!-- Example thread posts column in carousel -->
         <div class="container">
-            <div class="row">
-                    <div class="example-posts scale">
-                        {% for post in random_posts %}
-                            {% if forloop.counter0|divisibleby:3 %}
-                                <div class="row justify-content-center">
-                            {% endif %}
-                                    <div class="col-md-4">
-                                        <div class="card mb-4 mx-auto">
-                                            <div class="card-body">
-                                                <div class="image-container">
-                                                    <div class="image-flash">
-                                                        <p class="author">Author: {{ post.author }}</p>
-                                                    </div>
-                                                </div>
-                                                <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                                    <h2 class="card-title">{{ post.title }}</h2>
-                                                    <p class="card-text">{{ post.excerpt }}</p>
-                                                </a>
-                                            </div>
-                                        </div>
+            <div class="example-posts scale">
+                <div class="row d-flex justify-content-around align-content-center">
+                    {% for post in random_posts %}
+                    <div class="d-flex flex-row flex-wrap">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="image-container">
+                                    <div class="image-flash">
+                                        <p class="author">Author: {{ post.author }}</p>
+                                    </div>                                            </div>
+                                        <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                                            <h2 class="card-title">{{ post.title }}</h2>
+                                            <p class="card-text">{{ post.excerpt }}</p>
+                                        </a>
                                     </div>
-                                    {% if forloop.counter0|divisibleby:3 or forloop.last %}
                                 </div>
-                            {% endif %}
-                        {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
         
                         <!-- Pagination -->
                         <nav aria-label="Example Posts Pagination">
@@ -57,11 +51,11 @@
                             </ul>
                         </nav>
                     </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 
 <!-- index.html content ends here -->
 {% endblock %}
