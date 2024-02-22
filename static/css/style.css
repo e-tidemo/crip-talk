@@ -70,14 +70,6 @@ h1{
     font-size: xx-large;
 }
 
-.dropdown-menu.dropdown-menu-hover {
-    transition: none;
-}
-
-.dropdown-menu.dropdown-menu-hover:hover {
-    display: block;
-}
-
 .example-posts {
     background-color: #9ec5ff;
     padding: 20px;

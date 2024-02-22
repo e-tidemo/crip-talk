@@ -78,6 +78,10 @@ h1{
     display: block;
 }
 
+.navbar-toggler {
+    z-index: 1000;
+}
+
 .example-posts {
     background-color: #9ec5ff;
     padding: 20px;
