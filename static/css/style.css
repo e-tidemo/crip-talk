@@ -78,41 +78,11 @@ h1{
     display: block;
 }
 
-#postCarousel {
+.container .examples {
     background-color: #9ec5ff;
     padding: 20px;
     margin-bottom: 56px;
     border-radius: 20px;
-}
-
-#postCarousel .carousel-inner {
-    display: flex;
-    justify-content: space-around;
-}
-
-#postCarousel .carousel-item {
-    text-align: center;
-}
-
-.card-body {
-    background-color: #f8f8f8;
-}
-
-.card {
-    border: none;
-    color: #272d2d;
-    width: 100%; /* Add this line to ensure full width */
-}
-
-.image-container {
-    position: relative;
-}
-
-.image-flash {
-    position: relative;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px; 
 }
 
 .scale {
@@ -148,18 +118,21 @@ h1{
 
 .card {
     border: none;
+    background-color: #f8f8f8;
     color: #272d2d;
+    width: 100%;
 }
 
 .image-container {
     position: relative;
+    text-align: center;
 }
 
 .image-flash {
     position: relative;
     bottom: 5%;
     min-width: 30%;
-    left: -2px; 
+    left: -2px;
 }
 
 .scale {
@@ -214,7 +187,7 @@ h1{
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #ff8800;
 }
 
 .post-title {

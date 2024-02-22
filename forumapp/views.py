@@ -8,20 +8,14 @@ from django.contrib.auth import login
 from random import sample
 
 # Create your views here.
-class IndexView(TemplateView):
-    template_name='forumapp/index.html'
+class IndexView(ListView):
+    template_name = 'forumapp/index.html'
+    context_object_name = 'random_posts'
+    paginate_by = 3
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
+    def get_queryset(self):
         all_posts = Post.objects.all()
-        random_posts = sample(list(all_posts), 3)
-        context['random_posts'] = random_posts
-        return context
-    
-    def get(self, request, *args, **kwargs):
-        context = self.get_context_data()
-        return render(request, self.template_name, context)
+        return sample(list(all_posts), 3)
 
 class PostList(ListView):
     model = Post

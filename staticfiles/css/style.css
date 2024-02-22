@@ -78,15 +78,22 @@ h1{
     display: block;
 }
 
-#postCarousel {
+.container .examples {
     background-color: #9ec5ff;
     padding: 20px;
     margin-bottom: 56px;
     border-radius: 20px;
 }
 
-.card-body {
-    background-color: #f8f8f8;
+.scale {
+    width: 100%;
+    height: auto;
+}
+
+.author {
+    color: #272d2d;
+    margin: 4px;
+    text-transform: uppercase;
 }
 
 .red-o {
@@ -111,18 +118,21 @@ h1{
 
 .card {
     border: none;
+    background-color: #f8f8f8;
     color: #272d2d;
+    width: 100%;
 }
 
 .image-container {
     position: relative;
+    text-align: center;
 }
 
 .image-flash {
     position: relative;
     bottom: 5%;
     min-width: 30%;
-    left: -2px; 
+    left: -2px;
 }
 
 .scale {
@@ -177,7 +187,7 @@ h1{
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #ff8800;
 }
 
 .post-title {
