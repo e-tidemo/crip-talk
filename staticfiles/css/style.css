@@ -78,11 +78,14 @@ h1{
     display: block;
 }
 
-.container .examples {
+.example-posts {
     background-color: #9ec5ff;
     padding: 20px;
     margin-bottom: 56px;
     border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .scale {

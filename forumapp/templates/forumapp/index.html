@@ -8,15 +8,14 @@
         <header>
             <div class="intro">
             <h1 class="mainTitle">Crip Talk</h1>
-            <p class="forumIntro">A separatist forum for those of us who have disabilities of different kinds to connect with, relate to and learn from each other</p>
+            <p class="forumIntro">A separatist forum for those of us who are differently abled to connect with, relate to and learn from each other</p>
             <a class="btn btn-primary" href="{% url 'signup' %}" role="button">Sign Up</a>
             </div>
         </header>
         <!-- Example thread posts column in carousel -->
-        <div class="container examples">
+        <div class="container">
             <div class="row">
-                <div class="col-12 mt-3">
-                    <div class="example-posts">
+                    <div class="example-posts scale">
                         {% for post in random_posts %}
                             {% if forloop.counter0|divisibleby:3 %}
                                 <div class="row justify-content-center">
@@ -40,25 +39,24 @@
                                 </div>
                             {% endif %}
                         {% endfor %}
-                    </div>
         
-                    <!-- Pagination -->
-                    <nav aria-label="Example Posts Pagination">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item {% if not random_posts.has_previous %}disabled{% endif %}">
-                                <a class="page-link" href="?page={{ random_posts.previous_page_number }}" tabindex="-1" {% if not random_posts.has_previous %}aria-disabled="true"{% endif %}>Previous</a>
-                            </li>
-                            {% for page_num in random_posts.paginator.page_range %}
-                                <li class="page-item {% if page_num == random_posts.number %}active{% endif %}">
-                                    <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
+                        <!-- Pagination -->
+                        <nav aria-label="Example Posts Pagination">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item {% if not random_posts.has_previous %}disabled{% endif %}">
+                                    <a class="page-link" href="?page={{ random_posts.previous_page_number }}" tabindex="-1" {% if not random_posts.has_previous %}aria-disabled="true"{% endif %}>Previous</a>
                                 </li>
-                            {% endfor %}
-                            <li class="page-item {% if not random_posts.has_next %}disabled{% endif %}">
-                                <a class="page-link" href="?page={{ random_posts.next_page_number }}" {% if not random_posts.has_next %}aria-disabled="true"{% endif %}>Next</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+                                {% for page_num in random_posts.paginator.page_range %}
+                                    <li class="page-item {% if page_num == random_posts.number %}active{% endif %}">
+                                        <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
+                                    </li>
+                                {% endfor %}
+                                <li class="page-item {% if not random_posts.has_next %}disabled{% endif %}">
+                                    <a class="page-link" href="?page={{ random_posts.next_page_number }}" {% if not random_posts.has_next %}aria-disabled="true"{% endif %}>Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
             </div>
         </div>
     </div>
