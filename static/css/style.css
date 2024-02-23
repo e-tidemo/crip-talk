@@ -155,13 +155,29 @@ h1{
     height: 22rem;
 }
 
+.career {
+    background-image: url("../images/careers-background.png") 
+}
+
 .pastimes {
     background-image: url("../images/background-image.png");
 }
 
+.family {
+    background-image: url("../images/family-background.png");
+}
+
+.complaints {
+    background-image: url("../images/complaints-background.png");
+}
+
 .topic-title {
-    font-family: "Bebas Neue", sans-serif;
     font-size: 15rem;
+}
+
+.complaints-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 12rem;
     text-align: center;
 }
 
@@ -175,6 +191,9 @@ h1{
     background-color: #9ec5ff;
     padding-top: 15px;
 }
+
+/* post_detail.html */
+
 
 .red-o {
     color: #E84610;
@@ -206,30 +225,21 @@ h1{
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #272d2d;
     color: white;
     position: relative;
+    font-family: "Roboto", sans-serif;
+    font-size: medium;
 }
 
-.masthead-image {
-    position: relative;
-    overflow: hidden;
+.post-title {
+    font-family: "Roboto", sans-serif;
+    font-size: 5rem;
 }
 
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
+.post-content {
+    font-size: 2rem;
 }
-
 
 
 .link {

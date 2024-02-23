@@ -155,8 +155,20 @@ h1{
     height: 22rem;
 }
 
+.career {
+    background-image: url("../images/careers-background.png") 
+}
+
 .pastimes {
     background-image: url("../images/background-image.png");
+}
+
+.family {
+    background-image: url("../images/family-background.png");
+}
+
+.complaints {
+    background-image: url("../images/complaints-background.png");
 }
 
 .topic-title {
