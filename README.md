@@ -41,6 +41,8 @@ I have followed some tutorials, both written and on Youtube, to find guidance in
 
 - I found instructions on how the login and logout forms work in Django written by Will Vincent on learndjango.com: [Code for login/logout forms](https://learndjango.com/tutorials/django-login-and-logout-tutorial)
 
+- Build a Blog Comment Section video on Youtube (https://www.youtube.com/watch?v=hZrlh4qU4eQ)
+
 ### Other sources
 
 - Bootstrap documentation [Bootstrap documentation on navbars](https://getbootstrap.com/docs/5.0/components/navbar/)

@@ -58,7 +58,6 @@ def add_comment(request, slug):
         # Handle the case where the request method is not POST
         pass
 
-    # You can customize this part based on your requirements
     return redirect('post_detail', slug=post.slug)
 
 def signup(request):

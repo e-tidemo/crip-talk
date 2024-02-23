@@ -172,8 +172,12 @@ h1{
 }
 
 .topic-title {
-    font-family: "Bebas Neue", sans-serif;
     font-size: 15rem;
+}
+
+.complaints-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 12rem;
     text-align: center;
 }
 
@@ -186,6 +190,38 @@ h1{
 .topics-posts {
     background-color: #9ec5ff;
     padding-top: 15px;
+}
+
+/* post_detail.html */
+
+.masthead {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 33vh;
+    width: 100%;
+}
+
+.masthead-text {
+    background-color: #272d2d;
+    color: white;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-size: medium;
+}
+
+.post-title {
+    font-family: "Roboto", sans-serif;
+    font-size: 5rem;
+}
+
+.post-content {
+    font-size: 2rem;
+}
+
+.comment-comment {
+    height: 2rem;
 }
 
 .red-o {
@@ -207,42 +243,6 @@ h1{
 .main-bg {
     background-color: #f8f8f8;
 }
-
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
-}
-
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
-}
-
-
 
 .link {
     color: #23BBBB;

@@ -33,13 +33,33 @@
 <div class="container comments">
     <div class="row">
         <div class="col">
-            <h2>Comments</h2>
+            <h2>Comments...</h2>
+            {% if not post.comments.all %}
+            <p>No comments yet...</p>
+            {% else %}
             {% for comment in post.comments.all %}
-                <div class="card">
-                    <p>{{ comment.body }} - {{ comment.author.username }}</p>
-                    <p> {{ comment.updated_on | naturaltime }}</p>
+                <div>
+                    <strong>
+                        {{ comment.author.username }}
+                    </strong>
+                    <br/>
+                    {{ comment.body }}
+                    <br/>
+                    <strong>
+                        {{ comment.updated_on | naturaltime }}
+                    </strong>
+                    <br/><br/>
+                    <div class="comment-comment">
+                        <form method="post" action="{% url 'add_comment' slug=post.slug %}">
+                            {% csrf_token %}
+                            {{ comment_form.as_p }}
+                            <button type="submit">Add Comment</button>
+                        </form>
+                    </div>
+                    <br/><br/>
                 </div>
             {% endfor %}
+            {% endif %}
         </div>
     </div>
 </div>
