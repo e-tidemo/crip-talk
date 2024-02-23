@@ -2,15 +2,17 @@
 
 {% block topic_content %}
 
-<div class="container-fluid">
+<div class="container-fluid topic">
     <div class="row">
         <header>
-            <div class="banner">
-                <h1 class="topic-title">Pastimes</h1>
+            <div class="banner pastimes">
+                <h2 class="topic-title">Pastimes</h2>
                 <p class="topic-intro">This topic refers to any activities one does in one's sparetime, dating, hobbies, travels, etc.</p>
             </div>
         </header>
     </div>
+    <div class="topics-posts">
     {% include 'forumapp/post_list.html' %}
+    </div>
 </div>
 {% endblock %}

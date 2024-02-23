@@ -17,7 +17,6 @@ body {
 
 .container {
     padding-top: 20px; 
-    max-height: 18rem;
 }
 
 .mainTitle {
@@ -78,33 +77,12 @@ h1{
     position: relative;
 }
 
+/* Index.html */
 .example-posts {
     background-color: #9ec5ff;
     margin-bottom: 56px;
     border-radius: 20px;
-    max-height: fit-content;
 }
-
-.red-o {
-    color: #E84610;
-}
-
-.thin {
-    font-weight: 300;
-}
-
-.light-bg {
-    background-color: #f8f8f8;
-}
-
-.dark-bg {
-    background-color: #272d2d;
-}
-
-.main-bg {
-    background-color: #f8f8f8;
-}
-
 
 .card {
     border: none;
@@ -137,14 +115,85 @@ h1{
     text-transform: uppercase;
 }
 
-.post-title {
-    margin-top: 10px; 
-    margin-bottom: 10px;
+.post-link {
+    text-decoration: none;
+    color: #445261;
 }
 
-.post-subtitle {
+.post-link:hover,
+.page-link {
+    color: #ff8800;
+}
+
+.btn-signup,
+.btn-edit {
+    background-color: #188181;
+    color: #fff;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #fff;
+    color: #23BBBB;
+}
+
+/* post_list.html */
+.card-title {
+    margin-top: 10px; 
     margin-bottom: 10px;
-    color: lightgray;
+    margin-left: 5%;
+}
+
+.card-text {
+    margin-bottom: 10px;
+    margin-left: 5%;
+    color: #272d2d;
+}
+
+/* topics pages */
+.banner {
+    height: 22rem;
+}
+
+.pastimes {
+    background-image: url("../images/background-image.png");
+}
+
+.topic-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 15rem;
+    text-align: center;
+}
+
+.topic-intro {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+.topics-posts {
+    background-color: #9ec5ff;
+    padding-top: 15px;
+}
+
+.red-o {
+    color: #E84610;
+}
+
+.thin {
+    font-weight: 300;
+}
+
+.light-bg {
+    background-color: #f8f8f8;
+}
+
+.dark-bg {
+    background-color: #272d2d;
+}
+
+.main-bg {
+    background-color: #f8f8f8;
 }
 
 .masthead {
@@ -181,37 +230,7 @@ h1{
     z-index: 100;
 }
 
-.post-link {
-    text-decoration: none;
-    color: #445261;
-}
 
-.post-link:hover,
-.page-link {
-    color: #ff8800;
-}
-
-.post-title {
-    margin-top: 10%;
-    margin-left: 5%;
-}
-
-.post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
-}
-
-.btn-signup,
-.btn-edit {
-    background-color: #188181;
-    color: #fff;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
-}
 
 .link {
     color: #23BBBB;
