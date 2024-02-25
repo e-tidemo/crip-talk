@@ -1,13 +1,16 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.views.generic import ListView, TemplateView
-from .models import Post
+from .models import Post, Comment
 from .forms import CommentForm, SignupForm, PostForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
+from django.views.generic.edit import UpdateView, DeleteView
 from random import sample
+from django.http import HttpResponseForbidden
+from django.urls import reverse_lazy
+from django.contrib.messages.views import SuccessMessageMixin
 
-# Create your views here.
 class IndexView(ListView):
     template_name = 'forumapp/index.html'
     context_object_name = 'random_posts'
@@ -84,6 +87,35 @@ def create_post(request):
         form = PostForm()
 
     return render(request, 'forumapp/create_post.html', {'form': form})
+
+# The following two views are collected from duski.harap on steemit.com - for full reference, see README.md   
+
+class OwnerProtectMixin(object):
+    def dispatch(self, request, *args, **kwargs):
+        objectUser = self.get_object()
+        if objectUser.user != self.request.user:
+            return HttpResponseForbidden()
+        return super(OwnerProtectMixin, self).dispatch(request, *args, **kwargs)
+ 
+@login_required
+class PostUpdateView(OwnerProtectMixin, UpdateView):
+    model = Post
+    fields = ['title', 'content',]
+    template_name = 'forumapp/post_update_form.html'
+
+    def get_success_url(self, **kwargs):
+	    return reverse_lazy('forum-detail', kwargs={'slug' : self.object.slug})
+
+@login_required
+class PostDeleteView(SuccessMessageMixin, OwnerProtectMixin, DeleteView):
+	model = Post
+	success_url = '/forumapp'
+	success_message = 'Forum was successfully deleted'
+
+class CommentUpdateView(OwnerProtectMixin, UpdateView):
+    model = Comment
+    fields = ['content']
+    template_name = 'forumapp/update_comment.html'
 
 class FamilyView(generic.ListView):
     template_name = 'forumapp/family.html'

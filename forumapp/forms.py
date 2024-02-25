@@ -21,9 +21,9 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ('body',)
+        fields = ('content',)
         widgets = {
-            'body': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Comment'}),
+            'content': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Comment'}),
         }
 
 #The following class is collected from reintech.io written by Arthur C. Codex - for full reference, see credits in README

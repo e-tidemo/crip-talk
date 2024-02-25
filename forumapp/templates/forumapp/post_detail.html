@@ -60,6 +60,15 @@
                 </div>
             {% endfor %}
             {% endif %}
+            (html comment removed:  Display comment )
+            {% for comment in object.comment_set.all %}
+              <p>
+                  {{comment.desc}}
+                  {% if request.user == comment.user %} // protect data from other users
+                      <a href="{% url 'edit-comment' comment.id %}">Edit</a>
+                  {% endif %}
+              </p>
+            {% endfor %}
         </div>
     </div>
 </div>
