@@ -158,6 +158,7 @@ h1{
 
 .family {
     background-image: url("../images/family-background.png");
+    color: #f8f8f8;
 }
 
 .complaints {
@@ -176,8 +177,7 @@ h1{
 
 .topic-intro {
     font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
 }
 
