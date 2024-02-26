@@ -213,10 +213,13 @@ h1{
     background-color: #fff;
     font-family: "Roboto", sans-serif;
     font-size: 1rem;
+    height: 10vh;
+    width: 100%;
 }
 
 .comment-container {
     height: auto;
+    padding: 8px 16px;
 }
 
 .comment-card {
@@ -225,7 +228,7 @@ h1{
 }
 
 .add-comment {
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .btn-primary, 
