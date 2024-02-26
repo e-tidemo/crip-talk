@@ -41,9 +41,9 @@
             <h2>Comments...</h2>
             {% if not post.comments.all %}
             <p>No comments yet...</p>
-            {% else %}
-            {% for comment in post.comments.all %}
-                <div class="card comment-card">
+        {% else %}
+            <div class="card comment-card">
+                {% for comment in post.comments.all %}
                     <strong>
                         {{ comment.author.username }}
                     </strong>
@@ -61,20 +61,10 @@
                             </form>
                         {% endif %}
                     </p>
-                    <!---<div class="comment-comment">
-                        <form method="post" action="{% url 'add_comment' slug=post.slug %}">
-                            {% csrf_token %}
-                            {{ comment_form.as_p }}
-                            <button type="submit">Add Comment</button>
-                        </form>
-                    </div>
-                    <br/><br/> 
-                </div> --->
-            {% endfor %}
-            {% endif %}
-            <!--{% for comment in post.comments.all %}
-
-            {% endfor %}--->
+                    <hr class="comment-line"/>
+                {% endfor %}
+            </div>
+        {% endif %}
         </div>
     </div>
 </div>
