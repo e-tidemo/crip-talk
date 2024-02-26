@@ -6,9 +6,7 @@
     <div class="container">
         <div class="row g-0">
             <div class="masthead-text">
-                <!-- Post title goes in these h1 tags -->
                 <h2 class="post-title">{{ post.title }}</h2>
-                <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
             </div>
         </div>
@@ -19,8 +17,6 @@
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text post-content">
                     {{ post.content | safe }}
                 </p>
@@ -39,7 +35,7 @@
 </div>
 
 <!-- Display existing comments -->
-<div class="container comments">
+<div class="container comments comment-container">
     <div class="row">
         <div class="col">
             <h2>Comments...</h2>
@@ -47,11 +43,10 @@
             <p>No comments yet...</p>
             {% else %}
             {% for comment in post.comments.all %}
-                <div>
+                <div class="card comment-card">
                     <strong>
                         {{ comment.author.username }}
                     </strong>
-                    <br/>
                     {{ comment.content }}
                     <br/>
                     <strong>
@@ -66,7 +61,6 @@
                             </form>
                         {% endif %}
                     </p>
-                    <br/><br/>
                     <!---<div class="comment-comment">
                         <form method="post" action="{% url 'add_comment' slug=post.slug %}">
                             {% csrf_token %}
@@ -86,7 +80,7 @@
 </div>
 
 <!-- Comment form -->
-<div class="container">
+<div class="container add-comment">
     <div class="row">
         <div class="col">
             <h2>Add Comment</h2>

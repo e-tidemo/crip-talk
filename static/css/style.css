@@ -183,7 +183,8 @@ h1{
 
 .topic-intro {
     font-family: "Roboto", sans-serif;
-    font-size: 18px;
+    font-weight: 500;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -199,7 +200,7 @@ h1{
     overflow: hidden;
     position: relative;
     display: inline-block;
-    height: 33vh;
+    height: 10vh;
     width: 100%;
 }
 
@@ -208,24 +209,31 @@ h1{
     color: white;
     position: relative;
     font-family: "Roboto", sans-serif;
-    font-size: medium;
+    font-size: small;
 }
 
 .post-title {
     font-family: "Roboto", sans-serif;
-    font-size: 5rem;
-}
-
-.post-content {
     font-size: 2rem;
 }
 
-.comment-comment {
-    height: 2rem;
+.post-content {
+    font-size: small;
+    background-color: #fff;
 }
 
-.red-o {
-    color: #E84610;
+.comment-container {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.comment-card {
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.add-comment {
+    margin-top: 10px;
 }
 
 .thin {
