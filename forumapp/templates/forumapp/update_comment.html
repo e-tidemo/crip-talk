@@ -7,8 +7,8 @@
 {% block content %}
 <h2>Edit Comment</h2>
 <form method="post">
-    {% csrf_token %} // to protect the form
-    {{ form.as_p }} // to render form
+    {% csrf_token %}
+    {{ form.as_p }}
     <button type="submit" name="button">Submit</button>
 </form>
 

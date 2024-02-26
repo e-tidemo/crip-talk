@@ -4,6 +4,7 @@ from django.views.generic import ListView, TemplateView
 from .models import Post, Comment
 from .forms import CommentForm, SignupForm, PostForm
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from django.contrib.auth import login
 from django.views.generic.edit import UpdateView, DeleteView
 from random import sample
@@ -92,30 +93,37 @@ def create_post(request):
 
 class OwnerProtectMixin(object):
     def dispatch(self, request, *args, **kwargs):
-        objectUser = self.get_object()
-        if objectUser.user != self.request.user:
+        comment = self.get_object()
+        if comment.author != self.request.user:
             return HttpResponseForbidden()
         return super(OwnerProtectMixin, self).dispatch(request, *args, **kwargs)
  
-@login_required
+"""@login_required
 class PostUpdateView(OwnerProtectMixin, UpdateView):
     model = Post
     fields = ['title', 'content',]
     template_name = 'forumapp/post_update_form.html'
+    context_object_name = 'post-edit'
 
     def get_success_url(self, **kwargs):
-	    return reverse_lazy('forum-detail', kwargs={'slug' : self.object.slug})
+	    return reverse_lazy('post-detail', kwargs={'slug' : self.object.slug})
 
 @login_required
 class PostDeleteView(SuccessMessageMixin, OwnerProtectMixin, DeleteView):
 	model = Post
-	success_url = '/forumapp'
-	success_message = 'Forum was successfully deleted'
+	success_url = 'home'
+	success_message = 'Post was successfully deleted' """
 
+@method_decorator(login_required, name='dispatch')
 class CommentUpdateView(OwnerProtectMixin, UpdateView):
     model = Comment
     fields = ['content']
     template_name = 'forumapp/update_comment.html'
+    context_object_name = 'edit-comment'
+
+    def get_success_url(self):
+        post_slug = self.object.post.slug
+        return reverse_lazy('post_detail', kwargs={'slug': post_slug})
 
 class FamilyView(generic.ListView):
     template_name = 'forumapp/family.html'

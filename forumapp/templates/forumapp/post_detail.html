@@ -43,32 +43,31 @@
                         {{ comment.author.username }}
                     </strong>
                     <br/>
-                    {{ comment.body }}
+                    {{ comment.content }}
                     <br/>
                     <strong>
                         {{ comment.updated_on | naturaltime }}
                     </strong>
+                    <p>
+                        {% if request.user == comment.author %}
+                            <a href="{% url 'edit-comment' pk=comment.id %}">Edit</a>
+                        {% endif %}
+                    </p>
                     <br/><br/>
-                    <div class="comment-comment">
+                    <!---<div class="comment-comment">
                         <form method="post" action="{% url 'add_comment' slug=post.slug %}">
                             {% csrf_token %}
                             {{ comment_form.as_p }}
                             <button type="submit">Add Comment</button>
                         </form>
                     </div>
-                    <br/><br/>
-                </div>
+                    <br/><br/> 
+                </div> --->
             {% endfor %}
             {% endif %}
-            (html comment removed:  Display comment )
-            {% for comment in object.comment_set.all %}
-              <p>
-                  {{comment.desc}}
-                  {% if request.user == comment.user %} // protect data from other users
-                      <a href="{% url 'edit-comment' comment.id %}">Edit</a>
-                  {% endif %}
-              </p>
-            {% endfor %}
+            <!--{% for comment in post.comments.all %}
+
+            {% endfor %}--->
         </div>
     </div>
 </div>
