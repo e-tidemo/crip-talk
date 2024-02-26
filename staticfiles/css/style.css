@@ -40,10 +40,15 @@ h1{
     color: #f8f8f8;
     border-color: #ff4d29;
     border-radius: 15px;
-    font-family: "Bebas Neue", sans-serif;
     font-size: 30px;
     padding: 10px 20px;
 } 
+
+.btn-primary,
+.signup,
+.read-more {
+    font-family: "Bebas Neue", sans-serif;
+}
 
 .btn-primary:hover,
 .btn-primary:focus,
@@ -123,18 +128,6 @@ h1{
 .post-link:hover,
 .page-link {
     color: #ff8800;
-}
-
-.btn-signup,
-.btn-edit {
-    background-color: #188181;
-    color: #fff;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
 }
 
 /* post_list.html */
@@ -235,14 +228,11 @@ h1{
     margin-top: 20px;
 }
 
-.comment-button .post-button {
-    background-color: #ff4d29;
-    color: #f8f8f8; 
+.btn-primary, 
+.comment-button, 
+.post-button {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
 }
 
 .thin {
