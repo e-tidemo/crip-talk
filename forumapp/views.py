@@ -98,21 +98,24 @@ class OwnerProtectMixin(object):
             return HttpResponseForbidden()
         return super(OwnerProtectMixin, self).dispatch(request, *args, **kwargs)
  
-"""@login_required
+@method_decorator(login_required, name='dispatch')
 class PostUpdateView(OwnerProtectMixin, UpdateView):
     model = Post
     fields = ['title', 'content',]
     template_name = 'forumapp/post_update_form.html'
     context_object_name = 'post-edit'
 
-    def get_success_url(self, **kwargs):
-	    return reverse_lazy('post-detail', kwargs={'slug' : self.object.slug})
+    def get_success_url(self):
+        post_slug = self.object.slug
+        return reverse_lazy('post_detail', kwargs={'slug': post_slug})
 
-@login_required
+
+@method_decorator(login_required, name='dispatch')
 class PostDeleteView(SuccessMessageMixin, OwnerProtectMixin, DeleteView):
-	model = Post
-	success_url = 'home'
-	success_message = 'Post was successfully deleted' """
+    model = Post
+    context_object_name = 'delete-post'
+    success_url = reverse_lazy('home')
+    success_message = 'Post was successfully deleted'
 
 @method_decorator(login_required, name='dispatch')
 class CommentUpdateView(OwnerProtectMixin, UpdateView):
@@ -120,6 +123,16 @@ class CommentUpdateView(OwnerProtectMixin, UpdateView):
     fields = ['content']
     template_name = 'forumapp/update_comment.html'
     context_object_name = 'edit-comment'
+
+    def get_success_url(self):
+        post_slug = self.object.post.slug
+        return reverse_lazy('post_detail', kwargs={'slug': post_slug})
+    
+@method_decorator(login_required, name='dispatch')
+class CommentDeleteView(SuccessMessageMixin, OwnerProtectMixin, DeleteView):
+    model = Comment
+    context_object_name = 'delete-comment'
+    success_message = 'Comment was successfully deleted'
 
     def get_success_url(self):
         post_slug = self.object.post.slug
