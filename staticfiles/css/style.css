@@ -220,6 +220,7 @@ h1{
 .post-content {
     font-size: small;
     background-color: #fff;
+    width: 100%;
 }
 
 .comment-container {
@@ -229,11 +230,20 @@ h1{
 .comment-card {
     background-color: #fff;
     margin-bottom: 10px;
-    border-bottom: 1px solid #272d2d;
 }
 
 .add-comment {
     margin-top: 20px;
+}
+
+.comment-button .post-button {
+    background-color: #ff4d29;
+    color: #f8f8f8; 
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
 .thin {
