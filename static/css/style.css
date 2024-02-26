@@ -223,13 +223,13 @@ h1{
 }
 
 .comment-container {
-    max-height: 60vh;
-    overflow-y: auto;
+    height: auto;
 }
 
 .comment-card {
     background-color: #fff;
     margin-bottom: 10px;
+    border-bottom: 1px solid #272d2d;
 }
 
 .add-comment {
