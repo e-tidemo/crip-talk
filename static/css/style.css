@@ -39,15 +39,15 @@ h1{
     background-color: #ff4d29;
     color: #f8f8f8;
     border-color: #ff4d29;
-    border-radius: 15px;
-    font-size: 30px;
-    padding: 10px 20px;
 } 
 
 .btn-primary,
 .signup,
 .read-more {
     font-family: "Bebas Neue", sans-serif;
+    border-radius: 15px;
+    font-size: 30px;
+    padding: 10px 20px;
 }
 
 .btn-primary:hover,
@@ -232,7 +232,9 @@ h1{
 .comment-button, 
 .post-button {
     font-family: "Roboto", sans-serif;
-    font-weight: 400;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 4px 8px;
 }
 
 .thin {
