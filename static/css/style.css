@@ -209,7 +209,6 @@ h1{
     color: white;
     position: relative;
     font-family: "Roboto", sans-serif;
-    font-size: small;
 }
 
 .post-title {
@@ -218,9 +217,9 @@ h1{
 }
 
 .post-content {
-    font-size: small;
     background-color: #fff;
-    width: 100%;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
 }
 
 .comment-container {
@@ -229,7 +228,7 @@ h1{
 
 .comment-card {
     background-color: #fff;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .add-comment {
