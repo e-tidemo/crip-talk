@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
 from django.views import generic
 from django.views.generic import ListView, TemplateView
-from .models import Post, Comment
+from .models import Post, Comment, TermsAndConditions
 from .forms import CommentForm, SignupForm, PostForm
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
@@ -63,17 +64,30 @@ def add_comment(request, slug):
         pass
 
     return redirect('post_detail', slug=post.slug)
-
+#The following view is collected from skolo-online.medium - for full reference, see README.md
 def signup(request):
+    if request.method == 'GET':
+        form  = SignupForm()
+        context = {'form': form}
+        return render(request, 'forumapp/signup.html', context)
     if request.method == 'POST':
-        form = SignupForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('home')
+        form  = SignupForm(request.POST)
+    if form.is_valid():
+        form.save()
+        user = form.cleaned_data.get('username')
+        messages.success(request, 'Account was created for ' + user)
+        return redirect('home_page')
     else:
-        form = SignupForm()
+        print('Form is not valid')
+        messages.error(request, 'Error Processing Your Request')
+        context = {'form': form}
+        return render(request, 'forumapp/signup.html', context)
+    
     return render(request, 'forumapp/signup.html', {'form':form})
+
+def terms_and_conditions(request):
+    terms = TermsAndConditions.objects.first()
+    return render(request, 'forumapp/terms_and_conditions.html', {'terms': terms})
 
 @login_required
 def create_post(request):

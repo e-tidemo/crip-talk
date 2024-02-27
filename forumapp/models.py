@@ -47,3 +47,10 @@ class Comment(models.Model):
 
 class User(User):
     pass
+
+
+class TermsAndConditions(models.Model):
+    content = models.TextField()
+
+    def __str__(self):
+        return "Terms and Conditions"

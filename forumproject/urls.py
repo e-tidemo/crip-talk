@@ -16,11 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from forumapp import views as user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include("django.contrib.auth.urls")),
+    path('signup/', user_views.signup, name='signup'),
     path('summernote/', include('django_summernote.urls')),
     path("", include("forumapp.urls"), name="forumapp-urls"),
 ]
