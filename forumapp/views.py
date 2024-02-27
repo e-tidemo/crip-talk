@@ -33,20 +33,14 @@ class PostList(ListView):
         context = super().get_context_data(**kwargs)
         return context
 
-
-@login_required
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug, status=1)
     comments = post.comments.all()
     comment_form = CommentForm()
 
-    return render(
-        request,
-        "forumapp/post_detail.html",
-        {"post": post, "comments": comments, "comment_form": comment_form},
-    )
+    return render( request, "forumapp/post_detail.html", {"post": post, "comments": comments, "comment_form": comment_form},)
 
-@login_required
+@method_decorator(login_required)
 def add_comment(request, slug):
     post = get_object_or_404(Post, slug=slug, status=1)
 
@@ -89,7 +83,7 @@ def terms_and_conditions(request):
     terms = TermsAndConditions.objects.first()
     return render(request, 'forumapp/terms_and_conditions.html', {'terms': terms})
 
-@login_required
+@method_decorator(login_required)
 def create_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
@@ -179,3 +173,13 @@ class WallOfComplaintsView(generic.ListView):
 
     def get_queryset(self):
         return Post.objects.filter(category='wall_of_complaints', status=1).order_by('-created_on')
+
+# The search_results view is collected from Codemy.com on Youtube - see README.md for full reference 
+def search_results(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        posts = Post.objects.filter(title__contains=searched)
+
+        return render(request, 'forumapp/search_results.html', {'searched':searched, 'posts':posts})
+    else:
+        return render(request, 'forumapp/search_results.html', {})

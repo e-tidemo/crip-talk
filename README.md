@@ -9,7 +9,7 @@ Crip Talk is a forum website created by and for people with disabilities where w
 - [Features](#features)
     - [ ](# )
     - 
-    - 
+    - [Future features](#future-features)
 - [Design](#design)
 - [Technologies Used](#technologies-used)
 - [Deployment](#deployment)
@@ -18,6 +18,13 @@ Crip Talk is a forum website created by and for people with disabilities where w
 
 # User Experience (UX)
 An overall goal of this website is to make sure it is as accessible as possible as it is made for people with disabilities.
+
+# Features
+
+## Future Features
+Due to limitations in time, I have not managed to add all features and functions that I would have liked. The following are some features that should or could improve this app in the future:
+
+- In the future, the forum site should have a function to check if a user is trying to sign up with an email adress that is already registered on the forum.
 
 # Design
 

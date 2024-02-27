@@ -44,8 +44,7 @@ h1{
     border-color: #ff4d29;
 } 
 
-.btn-primary,
-.signup,
+.btn-signup,
 .read-more {
     font-family: "Bebas Neue", sans-serif;
     border-radius: 15px;
@@ -96,6 +95,9 @@ h1{
     border: none;
     background-color: #f8f8f8;
     color: #272d2d;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .card-body {

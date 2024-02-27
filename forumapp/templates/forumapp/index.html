@@ -9,7 +9,7 @@
             <div class="intro">
             <h1 class="mainTitle">Crip Talk</h1>
             <p class="forumIntro">A separatist forum for those of us who are differently abled to connect with, relate to and learn from each other</p>
-            <a class="btn btn-primary signup" href="{% url 'signup' %}" role="button">Sign Up</a>
+            <a class="btn btn-primary btn-signup" href="{% url 'signup' %}" role="button">Sign Up</a>
             </div>
         </header>
         <!-- Example thread posts column in carousel -->
@@ -23,10 +23,10 @@
                                 <div class="image-container">
                                     <div class="image-flash">
                                         <p class="author">Author: {{ post.author }}</p>
-                                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                        <h2 class="card-title">{{ post.title }}</h2>
-                                        <p class="card-text">{{ post.excerpt }}</p>
-                                    </a>
+                                        <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                                            <h2 class="card-title">{{ post.title }}</h2>
+                                            <p class="card-text">{{ post.excerpt }}</p>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -56,6 +56,4 @@
         </div>
     </div>
 </div>
-
-<!-- index.html content ends here -->
 {% endblock %}
