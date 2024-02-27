@@ -14,24 +14,24 @@
         </header>
         <!-- Example thread posts column in carousel -->
         <div class="container">
-            <div class="example-posts scale">
-                <div class="row d-flex justify-content-around align-content-center">
+            <div class="example-posts">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
                     {% for post in random_posts %}
-                    <div class="d-flex flex-row flex-wrap">
-                        <div class="card">
+                    <div class="col">
+                        <div class="card h-100">
                             <div class="card-body">
                                 <div class="image-container">
                                     <div class="image-flash">
                                         <p class="author">Author: {{ post.author }}</p>
-                                    </div>                                            </div>
-                                        <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                            <h2 class="card-title">{{ post.title }}</h2>
-                                            <p class="card-text">{{ post.excerpt }}</p>
-                                        </a>
+                                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                                        <h2 class="card-title">{{ post.title }}</h2>
+                                        <p class="card-text">{{ post.excerpt }}</p>
+                                    </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                     {% endfor %}
         
                         <!-- Pagination -->

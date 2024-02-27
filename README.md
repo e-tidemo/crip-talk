@@ -37,7 +37,7 @@ An overall goal of this website is to make sure it is as accessible as possible 
 ### Code Used
 I have followed some tutorials, both written and on Youtube, to find guidance in how to build this forum app. These are listed below:
 
-- I found instructions on how to add a signup form in this article by Arthur C. Codex: [Code for signup form](https://reintech.io/blog/writing-a-custom-signup-form-in-django)
+- I found instructions on how to add a signup form in this article by skolo-online.medium: [Code for signup form](https://skolo-online.medium.com/python-django-user-registration-login-logout-custom-styling-c2f2901e162a)
 
 - I found instructions on how the login and logout forms work in Django written by Will Vincent on learndjango.com: [Code for login/logout forms](https://learndjango.com/tutorials/django-login-and-logout-tutorial)
 
