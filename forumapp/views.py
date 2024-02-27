@@ -76,7 +76,7 @@ def signup(request):
         form.save()
         user = form.cleaned_data.get('username')
         messages.success(request, 'Account was created for ' + user)
-        return redirect('home_page')
+        return redirect('home')
     else:
         print('Form is not valid')
         messages.error(request, 'Error Processing Your Request')
