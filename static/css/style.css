@@ -2,6 +2,9 @@
 
 body {
     background-color: #f8f8f8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .intro {
@@ -238,6 +241,21 @@ h1{
     padding: 4px 8px;
 }
 
+/* Sign up page */
+.login-form {
+    padding: 20px 10px;
+    margin: 20px 10px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+}
+
 .thin {
     font-weight: 300;
 }
@@ -281,12 +299,4 @@ h1{
     color: #E84610;
     background: transparent;
     border: none;
-}
-
-.faded {
-    color: rgb(172, 175, 175);
-}
-
-.approval {
-    color: rgb(222, 146, 168);
 }
