@@ -40,7 +40,7 @@ def post_detail(request, slug):
 
     return render( request, "forumapp/post_detail.html", {"post": post, "comments": comments, "comment_form": comment_form},)
 
-@method_decorator(login_required)
+@login_required
 def add_comment(request, slug):
     post = get_object_or_404(Post, slug=slug, status=1)
 
@@ -83,7 +83,7 @@ def terms_and_conditions(request):
     terms = TermsAndConditions.objects.first()
     return render(request, 'forumapp/terms_and_conditions.html', {'terms': terms})
 
-@method_decorator(login_required)
+@login_required
 def create_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST)

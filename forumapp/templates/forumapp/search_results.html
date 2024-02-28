@@ -1,7 +1,7 @@
 {% extends 'base_topic.html' %}
 <!-- The following code is collected from Codemy.com on Youtube - see README.md for full reference -->
 {% block content %}
-    <center>
+    <div class="center">
     {% if searched %}
     
         <h2>You Searched For "{{ searched }}"</h2>
@@ -15,5 +15,5 @@
         <h2>Hey! You forgot to search for something...</h2>  
 
     {% endif %}
-    </center>
+    </div>
 {% endblock %}

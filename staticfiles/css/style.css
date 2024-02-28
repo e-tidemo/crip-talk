@@ -262,6 +262,10 @@ footer {
     margin-top: auto;
 }
 
+.center {
+    align-self: center;
+}
+
 .thin {
     font-weight: 300;
 }

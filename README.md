@@ -50,6 +50,8 @@ I have followed some tutorials, both written and on Youtube, to find guidance in
 
 - Build a Blog Comment Section video on Youtube (https://www.youtube.com/watch?v=hZrlh4qU4eQ)
 
+- Create a Search Bar by Codemy.com on Youtube [Tutorial on how to build a search bar in django](https://www.youtube.com/watch?v=AGtae4L5BbI)
+
 ### Other sources
 
 - Bootstrap documentation [Bootstrap documentation on navbars](https://getbootstrap.com/docs/5.0/components/navbar/)
