@@ -92,11 +92,7 @@ def create_post(request):
             post = form.save(commit=False)
             post.author = request.user
             post.save()
-            
-            if post.slug:  # Check if post.slug is not empty
-                return redirect('post_detail', slug=post.slug)
-            else:
-                raise ValueError("Empty slug encountered when trying to create a post.")
+            return redirect('post_detail', slug=post.slug)
     else:
         form = PostForm()
 
