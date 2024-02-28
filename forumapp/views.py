@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.views import generic
 from django.views.generic import ListView, TemplateView
 from .models import Post, Comment, TermsAndConditions
-from .forms import CommentForm, SignupForm, PostForm, ReportForm
+from .forms import CommentForm, SignupForm, PostForm
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth import login
@@ -189,37 +189,4 @@ def search_results(request):
     else:
         return render(request, 'forumapp/search_results.html', {})
 
-def get_post_content_by_slug(post_slug):
-    return "This is the content of the post with slug: " + post_slug
 
-@login_required
-def send_report_email(request, post_slug=None, comment_id=None):
-    if request.method == 'POST':
-        form = ReportForm(request.POST)
-        if form.is_valid():
-            subject = form.cleaned_data['subject']
-            message = form.cleaned_data['message']
-            sender_email = request.user.email
-
-            admin_email = 'elvira.d.tidemo@gmail.com'
-
-            send_mail(
-                subject,
-                f"From: {sender_email}\n\n{message}",
-                sender_email,
-                [admin_email],
-                fail_silently=False,
-            )
-
-            return render(request, 'success_template.html')  # Redirect to a success template
-    else:
-        form = ReportForm()
-
-    if post_slug:
-        # Retrieve the post content based on the slug
-        post_content = get_post_content_by_slug(post_slug)
-        # Set default values for the form
-        form.fields['subject'].initial = 'Crip Talk report'
-        form.fields['message'].initial = f'A report has been made on this post:\n\n{post_content}'
-
-    return render(request, 'report_form_template.html', {'form': form})
