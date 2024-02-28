@@ -98,6 +98,7 @@ h1{
     border-radius: 20px;
     margin-left: 10px;
     margin-right: 10px;
+    margin-bottom: 15px;
 }
 
 .card-body {
@@ -262,8 +263,9 @@ footer {
     margin-top: auto;
 }
 
-.center {
-    align-self: center;
+/* Report function */
+#reportForm {
+    display: none;
 }
 
 .thin {
