@@ -55,6 +55,7 @@
                     <strong>
                         {{ comment.updated_on | naturaltime }}
                     </strong>
+                    <button onclick="openReportForm()">Report</button>
                     {% if request.user == comment.author %}
                     <p>
                         <form method="get" action="{% url 'edit-comment' pk=comment.id %}" style="display: inline;">
