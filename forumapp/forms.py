@@ -73,7 +73,3 @@ class TermsAndConditionsForm(forms.ModelForm):
     class Meta:
         model = TermsAndConditions
         fields = ['content']
-
-class ReportForm(forms.Form):
-    subject = forms.CharField(max_length=100)
-    message = forms.CharField(widget=forms.Textarea)

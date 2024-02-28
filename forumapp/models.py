@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
 from django.utils.html import strip_tags
-from django.utils.text import slugify
 import random
 
 # Create your models here.
@@ -28,10 +27,6 @@ class Post(models.Model):
         return f"{self.title} | by {self.author}"
     
     def save(self, *args, **kwargs):
-        if not self.slug:
-            title_for_slug = self.title or "default-title"
-            self.slug = slugify(title_for_slug)
-
         self.excerpt = strip_tags(self.content[:150])
         
         super().save(*args, **kwargs)
