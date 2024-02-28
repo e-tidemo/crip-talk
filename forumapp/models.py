@@ -14,7 +14,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="thread_posts")
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
     updated_on = models.DateTimeField(auto_now=True)
     excerpt = models.TextField(blank=True)
     tags = TaggableManager()

@@ -2,6 +2,7 @@ from django import forms
 from .models import Post, Comment, User, TermsAndConditions
 from taggit.forms import TagField
 from django.contrib.auth.forms import UserCreationForm
+from django.utils.text import slugify
 
 class PostForm(forms.ModelForm):
     """Form for adding posts"""
@@ -15,6 +16,18 @@ class PostForm(forms.ModelForm):
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control'}),
         }
+
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+
+        slug = slugify(instance.title)
+
+        instance.slug = slug
+
+        if commit:
+            instance.save()
+
+        return instance
 
 class CommentForm(forms.ModelForm):
     """Form for adding comments"""
