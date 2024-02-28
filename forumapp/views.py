@@ -20,7 +20,7 @@ class IndexView(ListView):
     paginate_by = 3
 
     def get_queryset(self):
-        all_posts = Post.objects.all()
+        all_posts = Post.objects.filter(status=1).exclude(slug='')
         return sample(list(all_posts), 3)
 
 class PostList(ListView):
