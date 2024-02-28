@@ -262,6 +262,11 @@ footer {
     margin-top: auto;
 }
 
+/* Report function */
+#reportForm {
+    display: none;
+}
+
 .thin {
     font-weight: 300;
 }
