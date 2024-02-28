@@ -42,7 +42,7 @@ class Comment(models.Model):
         ordering = ["created_on"]
 
     def __str__(self):
-        return f"{self.body} | by {self.author}"
+        return f"{self.content} | by {self.author}"
 
 class User(User):
     pass
