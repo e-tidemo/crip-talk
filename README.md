@@ -27,6 +27,34 @@ Due to limitations in time, I have not managed to add all features and functions
 - In the future, the forum site should have a function to check if a user is trying to sign up with an email adress that is already registered on the forum.
 
 # Design
+The design of this website is quite simple as it is meant to be specifically for people who are differently abled and therefore it was designed to be as accessible as possible. I have kept colours quite simple and avoided using photos and instead used illustrations as this is less work for the eyes.
+
+## Colour scheme:
+[colour scheme](documentation/colour-scheme-crip-talk.png)
+
+## Fonts
+Google Fonts were used to import two different fonts which were chosen with accessibility in mind. I read the following article from Google: [Introducing Accessibility in Typography](https://fonts.google.com/knowledge/readability_and_accessibility/introducing_accessibility_in_typography) by Susanna Zaraysky. Based on this article, the following fonts were chosen as they have letters that are easily distinguishable from each other:
+
+- "Roboto" - which was used for paragraphs and some buttons
+- "Bebas Neue" - which was used for headlines and some buttons
+
+## Wireframes
+[home page browser](documentation/home-page-browser.png)
+
+[home page smartphone](documentation/home-page-smartphone.png)
+
+[sign up page](documentation/sign-up-page-browser.png)
+
+[family forum page](documentation/family-forum-page.png)
+
+The final website is slightly different from the wireframes presented here but these were what guided the layout of the web pages.
+
+## Accessibility
+I have done the following to make sure the website is as accessible as possible
+- Used semantic HTML
+- Used contrasting colours throughout the website
+- Provided information for screen readers about buttons and links to other websites
+
 
 ## Wireframes
 ![Wireframe home page](documentation/home-page-browser.png)

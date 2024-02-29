@@ -82,7 +82,7 @@
             <form method="post" action="{% url 'add_comment' slug=post.slug %}">
                 {% csrf_token %}
                 {{ comment_form.as_p }}
-                <button type="submit" class="btn btn-primary comment-button">Add Comment</button>
+                <button type="submit" class="btn btn-primary comment-button" aria-label="Add Comment">Add Comment</button>
             </form>
             <br/>
         </div>
