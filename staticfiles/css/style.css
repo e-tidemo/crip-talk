@@ -268,9 +268,15 @@ h1{
     margin-bottom: 0.6rem;
 }
 
+/* Search results page */
+.center {
+    text-align: center;
+}
+
 /* Footer */
 .footer {
     margin-top: auto;
+    color: #f8f8f8;
     text-align: center;
 }
 
