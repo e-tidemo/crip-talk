@@ -269,13 +269,14 @@ h1{
 }
 
 /* Footer */
-footer {
+.footer {
     margin-top: auto;
+    color: #f8f8f8;
+    text-align: center;
 }
 
-/* Report function */
-#reportForm {
-    display: none;
+.fab {
+    color: #f8f8f8;
 }
 
 .thin {
