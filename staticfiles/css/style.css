@@ -9,17 +9,17 @@ body {
 
 .intro {
     background-color: #ff8800;
-    padding: 20px;
+    padding: 1.25rem;
     box-sizing: border-box;
     position: relative;
     width: 100%;
     top: 0;
-    margin-bottom: 25px;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
 .container {
-    padding-top: 20px; 
+    padding-top: 1.25rem; 
 }
 
 .mainTitle {
@@ -28,13 +28,13 @@ body {
 }
 
 h1{
-    font-size: 200px;
+    font-size: 12.5rem;
 }
 
 .forumIntro {
     font-family: "Bebas Neue", sans-serif;
     color: #272d2d;
-    font-size: 30px;
+    font-size: 1.9rem;
 }
 
 .btn-primary {
@@ -47,9 +47,9 @@ h1{
 .btn-signup,
 .read-more {
     font-family: "Bebas Neue", sans-serif;
-    border-radius: 15px;
-    font-size: 30px;
-    padding: 10px 20px;
+    border-radius: 1rem;
+    font-size: 1.9rem;
+    padding: 0.6rem 1.25rem;
     width: 50%;
     align-self: center;
 }
@@ -72,7 +72,7 @@ h1{
 
 .navbar {
     background-color: #ff8800;
-    min-height: 60px;
+    min-height: 3.75rem;
     position: relative;
 }
 
@@ -89,22 +89,18 @@ h1{
 /* Index.html */
 .example-posts {
     background-color: #9ec5ff;
-    margin-bottom: 56px;
-    border-radius: 20px;
+    margin-bottom: 3.5rem;
+    border-radius: 1.25rem;
     overflow: hidden;
-    min-height: 100%;
-    display: flex;
-    align-items: stretch;
 }
 
 .card {
     border: none;
     background-color: #f8f8f8;
     color: #272d2d;
-    border-radius: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 15px;
+    border-radius: 1.25rem;
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
     height: 100%;
 }
 
@@ -125,15 +121,15 @@ h1{
     position: relative;
     bottom: 5%;
     min-width: 30%;
-    left: -2px;
+    left: -0.125rem;
 }
 
 .example-posts .row {
-    margin: -15px;
+    margin: -1rem;
 }
 
 .example-posts .col {
-    padding: 15px;
+    padding: 1rem;
 }
 
 .scale {
@@ -143,7 +139,7 @@ h1{
 
 .author {
     color: #272d2d;
-    margin: 4px;
+    margin: 0.25rem;
     text-transform: uppercase;
 }
 
@@ -159,13 +155,13 @@ h1{
 
 /* post_list.html */
 .card-title {
-    margin-top: 10px; 
-    margin-bottom: 10px;
+    margin-top: 0.6rem; 
+    margin-bottom: 0.6rem;
     margin-left: 5%;
 }
 
 .card-text {
-    margin-bottom: 10px;
+    margin-bottom: 0.6rem;
     color: #272d2d;
 }
 
@@ -175,7 +171,7 @@ h1{
 }
 
 .career {
-    background-image: url("../images/careers-background.jpg") 
+    background-image: url("../images/background-image.jpg") 
 }
 
 .pastimes {
@@ -183,9 +179,7 @@ h1{
 }
 
 .family {
-    background-image: url("../images/family-background.jpg");
-    width: 100%;
-    color: #fff;
+    background-image: url("../images/complaints-background.jpg");
 }
 
 .complaints {
@@ -200,19 +194,19 @@ h1{
 
 .topic-intro {
     font-family: "Roboto", sans-serif;
-    font-size: 30px;
+    font-size: 1.9rem;
     text-align: center;
 }
 
 .topics-posts {
     background-color: #9ec5ff;
-    padding-top: 15px;
+    padding-top: 1rem;
 }
 
 /* post_detail.html */
 
 .masthead {
-    margin-top: 10px;
+    margin-top: 0.6rem;
     overflow: hidden;
     position: relative;
     display: inline-block;
@@ -240,34 +234,34 @@ h1{
 
 .comment-container {
     height: auto;
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
 }
 
 .comment-card {
     background-color: #fff;
-    margin-bottom: 5px;
+    margin-bottom: 0.3rem;
 }
 
 .add-comment {
-    margin-top: 25px;
+    margin-top: 1.5rem;
 }
 
-.comment-button, 
+.comment-button,
 .post-button {
     font-family: "Roboto", sans-serif;
-    border-radius: 5px;
-    font-size: 15px;
-    padding: 4px 8px;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
 }
 
 /* Sign up page */
 .login-form {
-    padding: 20px 10px;
-    margin: 20px 10px;
+    padding: 1.25rem 0.6rem;
+    margin: 1.25rem 0.6rem;
 }
 
 .form-group {
-    margin-bottom: 10px;
+    margin-bottom: 0.6rem;
 }
 
 /* Footer */
@@ -284,20 +278,12 @@ footer {
     font-weight: 300;
 }
 
-.light-bg {
-    background-color: #f8f8f8;
-}
-
-.dark-bg {
-    background-color: #272d2d;
-}
-
 .main-bg {
     background-color: #f8f8f8;
 }
 
 .link {
-    color: #23BBBB;
+    color: #272d2d;
     text-decoration: none;
 }
 
@@ -323,4 +309,16 @@ footer {
     color: #E84610;
     background: transparent;
     border: none;
+}
+
+@media (max-width: 768px) {
+    h1 .main-title {
+        font-size: 8rem;
+    }
+    h2 .topic-title {
+        font-size: 7rem;
+    }
+    .topic-intro {
+        font-size: 1rem;
+    }
 }
