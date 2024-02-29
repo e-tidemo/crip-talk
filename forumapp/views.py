@@ -186,4 +186,6 @@ def search_results(request):
     else:
         return render(request, 'forumapp/search_results.html', {})
 
-
+# custom 404 view - collected from makeuseof.com - for full reference, see README.md
+def custom_404(request, exception):
+    return render(request, '404.html', status=404)

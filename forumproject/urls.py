@@ -25,3 +25,5 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path("", include("forumapp.urls"), name="forumapp-urls"),
 ]
+
+handler404 = 'forumapp.views.custom_404'
