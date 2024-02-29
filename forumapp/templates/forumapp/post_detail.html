@@ -28,7 +28,7 @@
                         </form>
                         <form method="post" action="{% url 'delete-post' slug=post.slug %}" style="display:inline;">
                             {% csrf_token %}
-                            <button type="submit" class="btn btn-primary delete-post-button">Delete</button>
+                            <button class="btn btn-primary delete-post-button" data-post-id="{{ post.id }}">Delete</button>
                         </form>
                 {% endif %}
                 </p>
@@ -62,7 +62,7 @@
                         </form>
                         <form method="post" action="{% url 'delete-comment' pk=comment.id %}" style="display:inline;">
                             {% csrf_token %}
-                            <button type="button" class="btn btn-primary delete-comment-button">Delete</button>
+                            <button class="btn btn-primary delete-comment-button" data-comment-id="{{ comment.id }}">Delete</button>
                         </form>
                         </form>
                     </p>

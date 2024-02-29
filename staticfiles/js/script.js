@@ -10,7 +10,8 @@ $('.delete-post-button').click(function (e) {
     e.preventDefault(); // Prevent the default action of the button
     var title = 'Delete Post';
     var message = 'Are you sure you want to delete this post?';
-    setConfirmationModal(title, message, 'delete-post');
+    var postId = $(this).data('post-id');
+    setConfirmationModal(title, message, 'delete-post', postId);
     $('#confirmationModal').modal('show');
 });
 
@@ -18,7 +19,8 @@ $('.delete-comment-button').click(function (e) {
     e.preventDefault(); // Prevent the default action of the button
     var title = 'Delete Comment';
     var message = 'Are you sure you want to delete this comment?';
-    setConfirmationModal(title, message, 'delete-comment');
+    var commentId = $(this).data('comment-id'); // Fetch the comment id from data attribute
+    setConfirmationModal(title, message, 'delete-comment', commentId);
     $('#confirmationModal').modal('show');
 });
 
@@ -26,14 +28,10 @@ $('.delete-comment-button').click(function (e) {
 $('#confirmAction').click(function () {
     var action = $('#confirmAction').data('action');
     if (action === 'delete-post') {
-        // Update the form action
         $('#deletePostForm').attr('action', '/delete-post/' + post.slug + '/');
-        // Submit the form
         $('#deletePostForm').submit();
     } else if (action === 'delete-comment') {
-        // Update the form action
-        $('#deleteCommentForm').attr('action', '/delete-comment/' + comment.id + '/');
-        // Submit the form
+        $('#deleteCommentForm').attr('action', '/delete-comment/' + $('#confirmAction').data('comment-id') + '/');
         $('#deleteCommentForm').submit();
     }
 });
