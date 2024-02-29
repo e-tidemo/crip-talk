@@ -117,6 +117,7 @@ class PostUpdateView(OwnerProtectMixin, UpdateView):
     def get_success_url(self):
         post_slug = self.object.slug
         return reverse_lazy('post_detail', kwargs={'slug': post_slug})
+    
 
 
 @method_decorator(login_required, name='dispatch')
@@ -179,7 +180,7 @@ class WallOfComplaintsView(generic.ListView):
 def search_results(request):
     if request.method == "POST":
         searched = request.POST['searched']
-        posts = Post.objects.filter(title__contains=searched)
+        posts = Post.objects.filter(title__icontains=searched)
 
         return render(request, 'forumapp/search_results.html', {'searched':searched, 'posts':posts})
     else:

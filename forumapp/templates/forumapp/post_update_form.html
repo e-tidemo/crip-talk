@@ -6,7 +6,16 @@
 <h2>Edit Post</h2>
 <form method="post">
 	{% csrf_token %}
-	{{ form.as_p }}
+
+	<div class="mb-3">
+		<label for="{{ form.title.id_for_label }}" class="form-label">Title:</label>
+		{{ form.title }}
+	</div>
+
+	<div class="mb-3">
+		<label for="{{ form.content.id_for_label }}" class="form-label">Content:</label>
+		<textarea name="content" cols="40" rows="10" class="form-control">{{ form.instance.content }}</textarea>
+	</div>
 	<button type="submit" name="button">Submit</button>
 </form>
 
