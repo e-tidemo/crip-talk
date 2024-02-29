@@ -282,6 +282,10 @@ footer {
     background-color: #f8f8f8;
 }
 
+.dark-bg {
+    background-color: #272d2d;
+}
+
 .link {
     color: #272d2d;
     text-decoration: none;
@@ -313,12 +317,16 @@ footer {
 
 @media (max-width: 768px) {
     h1 .main-title {
-        font-size: 8rem;
+        font-size: 6rem;
     }
     h2 .topic-title {
-        font-size: 7rem;
+        font-size: 5rem;
     }
     .topic-intro {
+        font-size: 1rem;
+    }
+    .btn-signup,
+    .read-more  {
         font-size: 1rem;
     }
 }

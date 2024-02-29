@@ -44,10 +44,6 @@ class Comment(models.Model):
     def __str__(self):
         return f"{self.content} | by {self.author}"
 
-class User(User):
-    pass
-
-
 class TermsAndConditions(models.Model):
     content = models.TextField()
 
