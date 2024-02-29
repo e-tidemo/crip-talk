@@ -1,34 +1,33 @@
-//Confirm user is sure they want to delete
-//
-$(document).ready(function () {
-    function showConfirmationModal(url, targetType) {
-        $('#confirmationModal').modal('show');
+// Function to set the modal content and action
+function setConfirmationModal(title, message, confirmAction) {
+    $('#confirmationModalLabel').text(title);
+    $('#confirmationMessage').text(message);
+    $('#confirmAction').data('action', confirmAction);
+}
 
-        $('#confirmAction').on('click', function () {
-            // Redirect to the delete URL
-            window.location.href = url;
-        });
+// When the delete button is clicked, set modal content and show the modal
+$('.delete-post-button').click(function () {
+    var title = 'Delete Post';
+    var message = 'Are you sure you want to delete this post?';
+    setConfirmationModal(title, message, 'delete-post');
+    $('#confirmationModal').modal('show');
+});
 
-        // Update the modal content based on the action type
-        if (targetType === 'post') {
-            $('#confirmationModalLabel').text('Delete Post');
-            $('#confirmationMessage').text('Are you sure you want to delete this post?');
-        } else if (targetType === 'comment') {
-            $('#confirmationModalLabel').text('Delete Comment');
-            $('#confirmationMessage').text('Are you sure you want to delete this comment?');
-        }
+$('.delete-comment-button').click(function () {
+    var title = 'Delete Comment';
+    var message = 'Are you sure you want to delete this comment?';
+    setConfirmationModal(title, message, 'delete-comment');
+    $('#confirmationModal').modal('show');
+});
+
+// When the modal delete button is clicked, execute the appropriate action
+$('#confirmAction').click(function () {
+    var action = $('#confirmAction').data('action');
+    if (action === 'delete-post') {
+        // Execute delete post action
+        $('#deletePostForm').submit();
+    } else if (action === 'delete-comment') {
+        // Execute delete comment action
+        $('#deleteCommentForm').submit();
     }
-
-    // Attach click events to delete buttons
-    $('.delete-post').on('click', function (e) {
-        e.preventDefault();
-        var deleteUrl = $(this).attr('href');
-        showConfirmationModal(deleteUrl, 'post');
-    });
-
-    $('.delete-comment').on('click', function (e) {
-        e.preventDefault();
-        var deleteUrl = $(this).attr('href');
-        showConfirmationModal(deleteUrl, 'comment');
-    });
 });
