@@ -50,6 +50,8 @@ h1{
     border-radius: 15px;
     font-size: 30px;
     padding: 10px 20px;
+    width: 50%;
+    align-self: center;
 }
 
 .btn-primary:hover,
@@ -89,6 +91,10 @@ h1{
     background-color: #9ec5ff;
     margin-bottom: 56px;
     border-radius: 20px;
+    overflow: hidden;
+    min-height: 100%;
+    display: flex;
+    align-items: stretch;
 }
 
 .card {
@@ -99,12 +105,14 @@ h1{
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 15px;
+    height: 100%;
 }
 
 .card-body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
 }
 
 .image-container {
@@ -118,6 +126,14 @@ h1{
     bottom: 5%;
     min-width: 30%;
     left: -2px;
+}
+
+.example-posts .row {
+    margin: -15px;
+}
+
+.example-posts .col {
+    padding: 15px;
 }
 
 .scale {
@@ -159,29 +175,26 @@ h1{
 }
 
 .career {
-    background-image: url("../images/careers-background.png") 
+    background-image: url("../images/careers-background.jpg") 
 }
 
 .pastimes {
-    background-image: url("../images/background-image.png");
+    background-image: url("../images/background-image.jpg");
 }
 
 .family {
-    background-image: url("../images/family-background.png");
-    color: #f8f8f8;
+    background-image: url("../images/family-background.jpg");
+    width: 100%;
+    color: #fff;
 }
 
 .complaints {
-    background-image: url("../images/complaints-background.png");
+    background-image: url("../images/complaints-background.jpg");
 }
 
 .topic-title {
-    font-size: 15rem;
-}
-
-.complaints-title {
     font-family: "Bebas Neue", sans-serif;
-    font-size: 12rem;
+    font-size: 10rem;
     text-align: center;
 }
 
@@ -239,7 +252,6 @@ h1{
     margin-top: 25px;
 }
 
-.btn-primary, 
 .comment-button, 
 .post-button {
     font-family: "Roboto", sans-serif;

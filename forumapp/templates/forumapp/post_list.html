@@ -9,14 +9,14 @@
             <div class="col-md-4 mb-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">{{ post.title }}</h5>
+                        <h3 class="card-title">{{ post.title }}</h3>
                         <p class="card-text">{{ post.excerpt }}</p>
                         <p class="card-text">
                             <small class="text-muted">
                                 Posted {{ post.created_on|naturaltime }} by {{ post.author.username }}
                             </small>
                         </p>
-                        <a href="{% url 'post_detail' slug=post.slug %}" class="btn btn-primary read-more">Read more</a>
+                        <a href="{% url 'post_detail' slug=post.slug %}" class="btn btn-primary read-more">Read post</a>
                     </div>
                 </div>
             </div>
