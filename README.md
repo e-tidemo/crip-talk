@@ -180,7 +180,7 @@ To deploy your website through Heroku follow these steps:
 7. Go to the Deploy tab on Heroku and click the "Deploy branch" button at the bottom of the page and await for the URL to be generated.
 
 # Testing
-
+Testing was done throughout the project, not least with Chrome developer tools which was used to troubleshoot issues that would arise while building the website and to test the responsiveness of the website on different devices.
 For all manual testing, see [TESTING.md](TESTING.md).
 
 ## PEP8 Compliant
@@ -189,7 +189,26 @@ All Python code is valid and compliant with PEP8 standards as per [CI Python Lin
 
 ## Lighthouse Testing
 
+### Homepage:
+![Homepage](documentation/lighthouse-testing/lighthouse-home.jpg)
 
+### Topic pages:
+![Family](documentation/lighthouse-testing/lighthouse-topic-family.jpg)
+![Pastimes](documentation/lighthouse-testing/lighthouse-topic-pastimes.jpg)
+![Career](documentation/lighthouse-testing/lighthouse-topic-career.jpg)
+![Wall of Complaints](documentation/lighthouse-testing/lighthouse-topic-complaints.jpg)
+
+### Login
+![Login](documentation/lighthouse-testing/lighthouse-login.jpg)
+
+### Sign Up
+![Sign up](documentation/lighthouse-testing/lighthouse-signup.jpg)
+
+### Terms and Conditions
+![Terms and Conditions](documentation/lighthouse-testing/lighthouse-terms-conditions.jpg)
+
+### Search Results
+![Search](documentation/lighthouse-testing/lighthouse-search.jpg)
 
 # Technologies and Libraries Used
 The main technologies ans libraries I have used in this project are:
