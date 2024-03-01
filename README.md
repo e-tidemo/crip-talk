@@ -5,27 +5,27 @@
 Crip Talk is a forum website created by and for people with disabilities where we can have a space for everything in life with the added spice of everyone having a disabled perspective. There is, of course, no way to monitor whether or not each user actually has a disability but that is less important as the main point is to create a digital space designated to the crip community. The most important thing is that everyone follows the forum community guidelines which is easier to monitor.
 
 # Table of Contents
-- [User experience (UX)](#user-experience-ux)
-- [Features](#features)
-    - [Homepage and Navbar](#homepage-and-navbar)
-    - [Sign Up](#signup)
-    - [Login Page](#login-page)
-    - [Create Post](#create-post)
-    - [Topic pages](#topic-pages)    
-    - [Add comment](#add-comment)
-    - [Search Bar](#search-bar)
-    - [Admin Panel](#admin-panel)
-    - [Future features](#future-features)
-- [Design](#design)
-    - [Database Models](#database-models)
-    - [Colour Scheme](#colour-scheme)
-    - [Fonts](#fonts)
-    - [Wireframes](#wireframes)
-    - [Accessibility](#accessibility)
-- [Technologies Used](#technologies-used)
-- [Deployment](#deployment)
-- [Testing](#testing)
-- [Credits](#credits)
+* [User experience (UX)](#user-experience-ux)
+* [Features](#features)
+    * [Homepage and Navbar](#homepage-and-navbar)
+    * [Sign Up](#signup)
+    * [Login Page](#login-page)
+    * [Create Post](#create-post)
+    * [Topic pages](#topic-pages)    
+    * [Add comment](#add-comment)
+    * [Search Bar](#search-bar)
+    * [Admin Panel](#admin-panel)
+    * [Future features](#future-features)
+* [Design](#design)
+    * [Database Models](#database-models)
+    * [Colour Scheme](#colour-scheme)
+    * [Fonts](#fonts)
+    * [Wireframes](#wireframes)
+    * [Accessibility](#accessibility)
+* [Technologies Used](#technologies-used)
+* [Deployment](#deployment)
+* [Testing](#testing)
+* [Credits](#credits)
 
 # User Experience (UX)
 To plan and produce this project, I used an agile methodology. I used the project tool in GitHub to keep track of the different processes to produce functions that the website needed to have. You can find the project [here](https://github.com/users/e-tidemo/projects/4).
@@ -212,8 +212,12 @@ I have followed some tutorials, both written and on Youtube, to find guidance in
 
 - How to make the search bar function not case sensitive [Non case sensitive search bar](https://stackoverflow.com/questions/12132368/django-queryset-contains-case-sensitive)
 
+- Create a custom 404 page [Custom 404 page tutorial](https://www.makeuseof.com/create-custom-404-error-page-django/)
+
 ### Other sources
 
 - Bootstrap documentation [Bootstrap documentation on navbars](https://getbootstrap.com/docs/5.0/components/navbar/)
 
 - Django documentation [Django documentation](https://docs.djangoproject.com/en/5.0/)
+
+- Favicon was collected from flaticon.com [favicon](https://www.flaticon.com/search?word=Talk)

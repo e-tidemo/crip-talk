@@ -16,6 +16,7 @@ body {
     top: 0;
     margin-bottom: 1.5rem;
     text-align: center;
+    overflow-wrap: break-word;
 }
 
 .container {
@@ -167,7 +168,11 @@ h1{
 
 /* topics pages */
 .banner {
-    height: 22rem;
+    height: auto;
+    width: 100%;
+    max-height: 65vh;
+    background-size: cover;
+    background-position: 69%;
 }
 
 .career {
@@ -190,6 +195,7 @@ h1{
     font-family: "Bebas Neue", sans-serif;
     font-size: 10rem;
     text-align: center;
+    overflow-wrap: break-word;
 }
 
 .topic-intro {
@@ -331,11 +337,11 @@ h1{
 }
 
 @media (max-width: 768px) {
-    h1 .main-title {
-        font-size: 6rem;
-    }
-    h2 .topic-title {
+    .main-title {
         font-size: 5rem;
+    }
+    .topic-title {
+        font-size: 2rem;
     }
     .topic-intro {
         font-size: 1rem;
