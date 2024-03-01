@@ -312,6 +312,11 @@ h1{
     text-decoration: underline;
 }
 
+.link-white {
+    color: #fff;
+    text-decoration: underline;
+}
+
 .link:hover,
 .link:active {
     color: #272d2d;

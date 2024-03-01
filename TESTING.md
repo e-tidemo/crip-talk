@@ -54,7 +54,7 @@ Edit Post
 ![Edit Post1](documentation/manual-testing/edit-post1.png)
 Edit Post
 
-![Delete Post](documentation/manual-testing)
+![Delete Post](documentation/manual-testing/delete-post.png)
 Delete Post
 
 ![Edit Comment1](documentation/manual-testing/edit-comment-1.png)
@@ -66,7 +66,8 @@ Edit Comment
 ![Edit Comment3](documentation/manual-testing/edit-comment-3.png)
 Edit Comment
 
-![Delete Comment](documentation/manual-testing)
+![Delete Comment](documentation/manual-testing/delete-comment1.png)
+![Delete Comment](documentation/manual-testing/delete-comment.png)
 Delete Comment
 
 

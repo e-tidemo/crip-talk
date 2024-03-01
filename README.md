@@ -76,6 +76,7 @@ And the finished post:
 
 ![Edit Comment3](documentation/manual-testing/edit-comment-3.png)
 
+![Delete Comment](documentation/manual-testing/delete-comment1.png)
 ![Delete Comment](documentation/manual-testing/delete-comment.png)
 
 ### Topic Pages
