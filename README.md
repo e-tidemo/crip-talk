@@ -42,7 +42,8 @@ The user stories were also mapped up in the document below. Because of some limi
 The features of the website were determined, as I mentioned above, largely by the limitations in time since this affected which features were implemented. I started with the must haves and then moved on to the should haves and could haves. The structure was planned to have at minimum a home page, at least 4 different categories of topics to sort forum threads into, a sign up page, a page for creating posts to start a thread, a functioning navigation bar, a login page and a logout button. Then I added some extra features such as a search bar and a search-results page. These are presented in a different order below:
 
 ### Homepage and Navbar
-![homepage]
+![homepage](documentation/manual-testing/homepage.png)
+
 ![navbar](documentation/navbar.png)
 
 ![navbar2](documentation/navbar2.png)
@@ -61,10 +62,11 @@ The features of the website were determined, as I mentioned above, largely by th
 ![Create-post](documentation/manual-testing/create-post.png)
 
 And the finished post:
-![Post-detail](documentation/)
+![Post-detail](documentation/manual-testing/new-post.png)
 
 ### Edit and Delete Posts and Comments
-![Edit Post](documentation/manual-testing)
+![Edit Post](documentation/manual-testing/edit-post.png)
+![Edit Post1](documentation/manual-testing/edit-post1.png)
 
 ![Delete Post](documentation/manual-testing/delete-post.png)
 
@@ -86,10 +88,10 @@ And the finished post:
 ![Wall of Complaints](documentation/complaints-topic.png)
 
 ### Add comment
-![Add comment]()
+![Add comment](documentation/manual-testing/add-comment.png)
 
 And the comment posted:
-![Comment]()
+![Comment](documentation/manual-testing/add-comment1.png)
 
 ### Search bar
 ![Search results](documentation/manual-testing/search.png)
