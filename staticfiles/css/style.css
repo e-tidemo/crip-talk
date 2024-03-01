@@ -309,7 +309,7 @@ h1{
 
 .link {
     color: #272d2d;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .link:hover,
