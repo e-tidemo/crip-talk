@@ -187,6 +187,10 @@ For all manual testing, see [TESTING.md](TESTING.md).
 
 All Python code is valid and compliant with PEP8 standards as per [CI Python Linter](https://pep8ci.herokuapp.com/#)
 
+## Lighthouse Testing
+
+
+
 # Technologies and Libraries Used
 The main technologies ans libraries I have used in this project are:
 - HTML
