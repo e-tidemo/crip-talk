@@ -26,9 +26,9 @@
                             {% csrf_token %}
                             <button type="submit" class="btn btn-primary post-button">Edit</button>
                         </form>
-                        <form method="post" action="{% url 'delete-post' slug=post.slug %}" style="display:inline;">
+                        <form method="post" action="{% url 'delete-post' slug=post.slug %}" onsubmit="return confirm('Are you sure you want to delete this?');" style="display:inline;">
                             {% csrf_token %}
-                            <button class="btn btn-primary delete-post-button" data-post-id="{{ post.id }}">Delete</button>
+                            <button class="btn btn-primary delete-post-button" type="submit">Delete</button>
                         </form>
                 {% endif %}
                 </p>
@@ -60,9 +60,9 @@
                         <form method="get" action="{% url 'edit-comment' pk=comment.id %}" style="display: inline;">
                             <button type="submit" class="btn btn-primary comment-button">Edit</button>
                         </form>
-                        <form method="post" action="{% url 'delete-comment' pk=comment.id %}" style="display:inline;">
+                        <form method="post" action="{% url 'delete-comment' pk=comment.id %}" onsubmit="return confirm('Are you sure you want to delete this?');" style="display:inline;">
                             {% csrf_token %}
-                            <button class="btn btn-primary delete-comment-button" data-comment-id="{{ comment.id }}">Delete</button>
+                            <button class="btn btn-primary delete-post-button" type="submit">Delete</button>
                         </form>
                         </form>
                     </p>
