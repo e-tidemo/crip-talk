@@ -7,7 +7,7 @@
         <h2>You Searched For "{{ searched }}"</h2>
         <br/>
         {% for post in posts %}
-            <a href="{% url 'post_detail' post.slug %}">{{ post }} - {{ post.updated_on }}</a><br/>
+            <a href="{% url 'post_detail' post.slug %}" class="link link:active link:hover">{{ post }} - {{ post.updated_on }}</a><br/>
         {% endfor %}
 
     {% else %}
