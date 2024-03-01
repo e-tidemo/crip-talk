@@ -210,6 +210,9 @@ All Python code is valid and compliant with PEP8 standards as per [CI Python Lin
 ### Search Results
 ![Search](documentation/lighthouse-testing/lighthouse-search.jpg)
 
+## CSS Validator
+![CSS validator](documentation/css-testing.png)
+
 # Technologies and Libraries Used
 The main technologies ans libraries I have used in this project are:
 - HTML
