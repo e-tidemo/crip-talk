@@ -338,7 +338,7 @@ h1{
 
 @media (max-width: 768px) {
     .main-title {
-        font-size: 5rem;
+        font-size: 4rem;
     }
     .topic-title {
         font-size: 4rem;
@@ -348,6 +348,6 @@ h1{
     }
     .btn-signup,
     .read-more  {
-        font-size: 1rem;
+        font-size: 1.9rem;
     }
 }

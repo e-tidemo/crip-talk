@@ -14,6 +14,7 @@ from django.http import HttpResponseForbidden
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 
+
 class IndexView(ListView):
     template_name = 'forumapp/index.html'
     context_object_name = 'random_posts'
@@ -23,23 +24,28 @@ class IndexView(ListView):
         all_posts = Post.objects.filter(status=1).exclude(slug='')
         return sample(list(all_posts), 3)
 
+
 class PostList(ListView):
     model = Post
     template_name = 'forumapp/post_list.html'
     context_object_name = "post_list"
     paginate_by = 6
     queryset = Post.objects.filter(status=1).order_by('?')[:3]
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
+
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug, status=1)
     comments = post.comments.all()
     comment_form = CommentForm()
 
-    return render( request, "forumapp/post_detail.html", {"post": post, "comments": comments, "comment_form": comment_form},)
+    return render(request, "forumapp/post_detail.html",
+                  {"post": post, "comments": comments,
+                   "comment_form": comment_form},)
+
 
 @login_required
 def add_comment(request, slug):
@@ -59,14 +65,17 @@ def add_comment(request, slug):
         pass
 
     return redirect('post_detail', slug=post.slug)
-#The following view is collected from skolo-online.medium - for full reference, see README.md
+
+
+# The following view is collected from skolo-online.medium -
+# for full reference, see README.md
 def signup(request):
     if request.method == 'GET':
-        form  = SignupForm()
+        form = SignupForm()
         context = {'form': form}
         return render(request, 'forumapp/signup.html', context)
     if request.method == 'POST':
-        form  = SignupForm(request.POST)
+        form = SignupForm(request.POST)
     if form.is_valid():
         form.save()
         user = form.cleaned_data.get('username')
@@ -77,12 +86,15 @@ def signup(request):
         messages.error(request, 'Error Processing Your Request')
         context = {'form': form}
         return render(request, 'forumapp/signup.html', context)
-    
-    return render(request, 'forumapp/signup.html', {'form':form})
+
+    return render(request, 'forumapp/signup.html', {'form': form})
+
 
 def terms_and_conditions(request):
     terms = TermsAndConditions.objects.first()
-    return render(request, 'forumapp/terms_and_conditions.html', {'terms': terms})
+    return render(request, 'forumapp/terms_and_conditions.html',
+                  {'terms': terms})
+
 
 @login_required
 def create_post(request):
@@ -98,26 +110,29 @@ def create_post(request):
 
     return render(request, 'forumapp/create_post.html', {'form': form})
 
-# The following two views are collected from duski.harap on steemit.com - for full reference, see README.md   
+# The following two views are collected from duski.harap on steemit.com -
+# for full reference, see README.md
+
 
 class OwnerProtectMixin(object):
     def dispatch(self, request, *args, **kwargs):
         comment = self.get_object()
         if comment.author != self.request.user:
             return HttpResponseForbidden()
-        return super(OwnerProtectMixin, self).dispatch(request, *args, **kwargs)
- 
+        return super(OwnerProtectMixin, self).dispatch(request, *args,
+                                                       **kwargs)
+
+
 @method_decorator(login_required, name='dispatch')
 class PostUpdateView(OwnerProtectMixin, UpdateView):
     model = Post
-    fields = ['title', 'content',]
+    fields = ['title', 'content', ]
     template_name = 'forumapp/post_update_form.html'
     context_object_name = 'post-edit'
 
     def get_success_url(self):
         post_slug = self.object.slug
         return reverse_lazy('post_detail', kwargs={'slug': post_slug})
-    
 
 
 @method_decorator(login_required, name='dispatch')
@@ -126,6 +141,7 @@ class PostDeleteView(SuccessMessageMixin, OwnerProtectMixin, DeleteView):
     context_object_name = 'delete-post'
     success_url = reverse_lazy('home')
     success_message = 'Post was successfully deleted'
+
 
 @method_decorator(login_required, name='dispatch')
 class CommentUpdateView(OwnerProtectMixin, UpdateView):
@@ -137,7 +153,8 @@ class CommentUpdateView(OwnerProtectMixin, UpdateView):
     def get_success_url(self):
         post_slug = self.object.post.slug
         return reverse_lazy('post_detail', kwargs={'slug': post_slug})
-    
+
+
 @method_decorator(login_required, name='dispatch')
 class CommentDeleteView(SuccessMessageMixin, OwnerProtectMixin, DeleteView):
     model = Comment
@@ -148,44 +165,57 @@ class CommentDeleteView(SuccessMessageMixin, OwnerProtectMixin, DeleteView):
         post_slug = self.object.post.slug
         return reverse_lazy('post_detail', kwargs={'slug': post_slug})
 
+
 class FamilyView(generic.ListView):
     template_name = 'forumapp/family.html'
     context_object_name = 'post_list'
 
     def get_queryset(self):
-        return Post.objects.filter(category='family', status=1).order_by('-created_on')
+        return Post.objects.filter(category='family',
+                                   status=1).order_by('-created_on')
+
 
 class PastimesView(generic.ListView):
     template_name = 'forumapp/pastimes.html'
     context_object_name = 'post_list'
 
     def get_queryset(self):
-        return Post.objects.filter(category='pastimes', status=1).order_by('-created_on')
-    
+        return Post.objects.filter(category='pastimes',
+                                   status=1).order_by('-created_on')
+
+
 class CareerView(generic.ListView):
     template_name = 'forumapp/career.html'
     context_object_name = 'post_list'
 
     def get_queryset(self):
-        return Post.objects.filter(category='career', status=1).order_by('-created_on')
-    
+        return Post.objects.filter(category='career',
+                                   status=1).order_by('-created_on')
+
+
 class WallOfComplaintsView(generic.ListView):
     template_name = 'forumapp/wall_of_complaints.html'
     context_object_name = 'post_list'
 
     def get_queryset(self):
-        return Post.objects.filter(category='wall_of_complaints', status=1).order_by('-created_on')
+        return Post.objects.filter(category='wall_of_complaints',
+                                   status=1).order_by('-created_on')
 
-# The search_results view is collected from Codemy.com on Youtube - see README.md for full reference 
+
+# The search_results view is collected from Codemy.com on Youtube -
+# see README.md for full reference
 def search_results(request):
     if request.method == "POST":
         searched = request.POST['searched']
         posts = Post.objects.filter(title__icontains=searched)
 
-        return render(request, 'forumapp/search_results.html', {'searched':searched, 'posts':posts})
+        return render(request, 'forumapp/search_results.html',
+                      {'searched': searched, 'posts': posts})
     else:
         return render(request, 'forumapp/search_results.html', {})
 
-# custom 404 view - collected from makeuseof.com - for full reference, see README.md
+
+# custom 404 view - collected from makeuseof.com -
+# for full reference, see README.md
 def custom_404(request, exception):
     return render(request, 'forumapp/404.html', status=404)

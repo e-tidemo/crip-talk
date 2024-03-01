@@ -181,7 +181,11 @@ To deploy your website through Heroku follow these steps:
 
 # Testing
 
-For all testing, see [TESTING.md](TESTING.md).
+For all manual testing, see [TESTING.md](TESTING.md).
+
+## PEP8 Compliant
+
+All Python code is valid and compliant with PEP8 standards as per [CI Python Linter](https://pep8ci.herokuapp.com/#)
 
 # Technologies and Libraries Used
 The main technologies ans libraries I have used in this project are:
